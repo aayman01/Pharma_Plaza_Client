@@ -93,9 +93,11 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
-            Join US
-          </button>
+          <Link to ='/login'>
+            <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
+              Join US
+            </button>
+          </Link>
         </div>
       </div>
     </div>
