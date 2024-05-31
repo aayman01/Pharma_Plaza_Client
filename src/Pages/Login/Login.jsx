@@ -13,7 +13,7 @@ const Login = () => {
               </div>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl">
-              <h2 className="text-3xl text-center font-bold mt-6">
+              <h2 className="text-3xl text-center font-bold p-4 mt-6">
                 Please Login!
               </h2>
               <form className="card-body">
@@ -45,7 +45,11 @@ const Login = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <input
+                    className="btn btn-primary"
+                    type="submit"
+                    value="Register"
+                  />
                 </div>
               </form>
               <p className="text-center text-black mb-4 font-medium">
@@ -56,7 +60,7 @@ const Login = () => {
                   <FcGoogle />
                 </button>
                 <button>
-                    <FaGithub/>
+                  <FaGithub />
                 </button>
               </div>
               <p className="text-center text-black mt-4 pb-10 font-medium">
@@ -66,7 +70,7 @@ const Login = () => {
                   to="/register"
                 >
                   {" "}
-                  Register
+                  Sign Up
                 </Link>{" "}
               </p>
             </div>
