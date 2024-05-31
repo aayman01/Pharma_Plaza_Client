@@ -53,7 +53,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-[#dbf4fc] px-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -93,7 +93,7 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to ='/login'>
+          <Link to="/login">
             <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
               Join US
             </button>
