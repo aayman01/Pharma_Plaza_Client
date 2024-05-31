@@ -2,7 +2,15 @@ import { Link } from 'react-router-dom';
 import log from '../../assets/log.png'
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa6';
+import { useForm } from 'react-hook-form';
 const Login = () => {
+    const {
+      register,
+      handleSubmit,
+      formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => console.log(data);
     return (
       <div className="max-w-6xl mx-auto px-4">
         <div className="hero min-h-screen">
@@ -16,7 +24,7 @@ const Login = () => {
               <h2 className="text-3xl text-center font-bold p-4 mt-6">
                 Please Login!
               </h2>
-              <form className="card-body">
+              <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
@@ -25,8 +33,11 @@ const Login = () => {
                     type="email"
                     placeholder="email"
                     className="input input-bordered"
-                    required
+                    {...register("email", { required: true })}
                   />
+                  {errors.email && (
+                    <span className="text-red-500 mt-2">Email is required</span>
+                  )}
                 </div>
                 <div className="form-control">
                   <label className="label">
@@ -36,8 +47,13 @@ const Login = () => {
                     type="password"
                     placeholder="password"
                     className="input input-bordered"
-                    required
+                    {...register("password", { required: true })}
                   />
+                  {errors.password && (
+                    <span className="text-red-500 mt-2">
+                      Password is required
+                    </span>
+                  )}
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
@@ -48,7 +64,7 @@ const Login = () => {
                   <input
                     className="btn btn-primary"
                     type="submit"
-                    value="Register"
+                    value="Login"
                   />
                 </div>
               </form>
