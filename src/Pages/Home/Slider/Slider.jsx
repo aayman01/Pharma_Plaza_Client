@@ -7,7 +7,8 @@ import useCategory from "../../../Hooks/useCategory";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import './slider.css'
+import './slider.css';
+
 const Slider = () => {
   const { categories } = useCategory();
   return (
