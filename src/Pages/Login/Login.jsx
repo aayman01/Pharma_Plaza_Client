@@ -83,7 +83,7 @@ const Login = () => {
                 Do not have an account?
                 <Link
                   className="text-red-600 font-medium underline decoration-red-600"
-                  to="/register"
+                  to="/signup"
                 >
                   {" "}
                   Sign Up
