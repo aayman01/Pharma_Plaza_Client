@@ -1,5 +1,6 @@
 import Category from "../Category/Category";
 import Slider from "../Slider/Slider";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -7,6 +8,7 @@ const Home = () => {
         <Slider />
         <div className="max-w-6xl mx-auto px-4">
           <Category />
+          <Testimonial/>
         </div>
       </div>
     );

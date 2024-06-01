@@ -9,7 +9,7 @@ const CategoryCard = ({ category }) => {
           <img className="w-32 h-28" src={categoryImage} alt={categoryName} />
         </figure>
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">{categoryName}()</h2>
+          <h2 className="text-lg lg:text-2xl font-bold text-center">{categoryName}()</h2>
         </div>
       </div>
     </Link>
