@@ -1,10 +1,18 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/icon.png'
+import useAuth from "../../../Hooks/useAuth";
 
 const NavBar = () => {
   // sky #dbf4fc
   // blue #076cec
+  const {user, logOut} = useAuth();
+  console.log(user)
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch()
+  }
   const navOptions = (
     <>
       <li>
@@ -93,11 +101,15 @@ const NavBar = () => {
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login">
-            <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
-              Join US
-            </button>
-          </Link>
+          {user ? (
+            <button onClick={handleLogOut}>Logout</button>
+          ) : (
+            <Link to="/login">
+              <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
+                Join US
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

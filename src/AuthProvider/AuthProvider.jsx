@@ -11,7 +11,7 @@ import {
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/FireBase.config";
 
-const AuthContext = createContext(null);
+export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -41,7 +41,7 @@ const AuthProvider = ({ children }) => {
   // update user profile
   const updateUserProfile = (name, photo) => {
     return updateProfile(auth.currentUser, {
-      displayname: name,
+      displayName: name,
       photoURL: photo,
     });
   };
