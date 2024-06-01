@@ -102,7 +102,40 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button onClick={handleLogOut}>Logout</button>
+            <div className="dropdown dropdown-end mr-4">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full">
+                  <img alt="User Photo" src={user?.photoURL} />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <button className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white">
+                    Update Profile
+                  </button>
+                </li>
+                <li>
+                  <button className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white">
+                    Dashboard
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogOut}
+                    className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <Link to="/login">
               <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
