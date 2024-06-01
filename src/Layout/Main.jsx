@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import NavBar from '../Pages/Shared/NavBar/NavBar';
+import Footer from '../Pages/Shared/Footer/Footer';
 
 const Main = () => {
     const noHeaderFooter =
@@ -11,6 +12,7 @@ const Main = () => {
         <div className="max-w-6xl mx-auto px-4">
           <Outlet />
         </div>
+        {noHeaderFooter || <Footer/>}
       </div>
     );
 };
