@@ -1,52 +1,72 @@
 [
     {
-        "description": "I recently bought some supplements from this site, and the experience was fantastic. The ordering process was smooth, and the delivery was quicker than expected. The products were authentic and well-packaged. I highly recommend this platform for anyone looking for reliable healthcare products!",
-        "name": "Emily Johnson",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/2jLdy3z/paracetamol-tablet-500-mg.jpg",
+        "medicineName": "Paracetamol 500mg",
+        "description": "Effective pain relief and fever reducer. Suitable for headaches, muscle pain, arthritis, backache, toothaches, colds, and fevers. Safe for adults and children over 6 years.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "As a regular customer, I can confidently say that this platform has never disappointed me. The variety of medicines available is extensive, and I always find what I need. Plus, the customer service is top-notch, always ready to assist with any queries.",
-        "name": "Michael Smith",
-        "image": "https://i.ibb.co/9nyZm5b/cheerful-young-caucasian-businessman.jpg"
+        "medicineImage": "https://i.ibb.co/T2V14cq/Ibuprofen-200mg1000.jpg",
+        "medicineName": "Ibuprofen 200mg",
+        "description": "Relieves pain and reduces inflammation. Ideal for treating minor aches and pains due to common cold, headaches, toothaches, muscle aches, arthritis, and menstrual cramps.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "This website is a lifesaver! I managed to find rare medications that I couldn't get anywhere else. The user interface is easy to navigate, and the prices are very competitive. I'll definitely keep coming back for all my healthcare needs.",
-        "name": "Sarah Thompson",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/zFRNdfL/images.jpg",
+        "medicineName": "Aspirin 81mg",
+        "description": "Low dose aspirin for heart health. Often recommended for daily use to reduce the risk of heart attack and stroke. Not suitable for children under 12 years.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Removed"
     },
     {
-        "description": "I was hesitant to order medicines online at first, but this platform exceeded my expectations. The product descriptions are detailed, and the reviews from other customers helped me make informed decisions. The delivery was prompt, and the items were securely packed.",
-        "name": "John Doe",
-        "image": "https://i.ibb.co/9nyZm5b/cheerful-young-caucasian-businessman.jpg"
+        "medicineImage": "https://i.ibb.co/MgQ86JX/images-1.jpg",
+        "medicineName": "Cetirizine 10mg",
+        "description": "Allergy relief medication. Provides 24-hour relief from symptoms of hay fever and other upper respiratory allergies such as runny nose, sneezing, itchy/watery eyes, and itching of the throat or nose.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "Excellent service! I appreciate the wide range of healthcare products available on this site. The detailed descriptions and genuine customer reviews make it easy to choose the right products. I’ve already recommended this platform to my friends and family.",
-        "name": "Laura Williams",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/Gp7pZ5p/images-2.jpg",
+        "medicineName": "Omeprazole 20mg",
+        "description": "Reduces stomach acid, treats heartburn. Used for short-term treatment of frequent heartburn that occurs 2 or more days per week. It may take 1 to 4 days for full effect.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Removed"
     },
     {
-        "description": "This e-commerce platform is fantastic for buying medicines online. They have a vast selection, and the website is very user-friendly. The delivery was quick, and I was impressed with the quality of the products. Highly recommended!",
-        "name": "David Brown",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/H2YBrbB/images-3.jpg",
+        "medicineName": "Amoxicillin 500mg",
+        "description": "Antibiotic for bacterial infections. Effective against various bacterial infections including pneumonia, bronchitis, and infections of the ears, nose, throat, skin, and urinary tract.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "I have been ordering my prescription medications from this site for a few months now, and I am extremely satisfied. The process is straightforward, and the delivery is always on time. Plus, the prices are much lower than at my local pharmacy.",
-        "name": "Jessica Taylor",
-        "image": "https://i.ibb.co/9nyZm5b/cheerful-young-caucasian-businessman.jpg"
+        "medicineImage": "https://i.ibb.co/0JVp975/58-08175.jpg",
+        "medicineName": "Loratadine 10mg",
+        "description": "Non-drowsy allergy relief. Provides long-lasting relief from allergy symptoms like runny nose, sneezing, itchy/watery eyes, and itching of the nose or throat without causing drowsiness.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "Finding a reliable source for healthcare products online can be challenging, but this platform has earned my trust. The products are genuine, and the delivery service is excellent. I am very happy with my purchases and will continue to shop here.",
-        "name": "Robert Anderson",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/2PTRDdG/Glycomet.jpg",
+        "medicineName": "Metformin 500mg",
+        "description":  "Helps control blood sugar levels. Commonly used for managing type 2 diabetes, it improves glucose tolerance and lowers both basal and postprandial plasma glucose levels.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Removed"
     },
     {
-        "description": "Great experience! The variety of health supplements available is impressive. I found everything I needed in one place, and the prices are very reasonable. The customer support team is very responsive and helpful.",
-        "name": "Elizabeth Martinez",
-        "image": "https://i.ibb.co/9nyZm5b/cheerful-young-caucasian-businessman.jpg"
+        "medicineImage": "https://i.ibb.co/jyb3RwV/images-4.jpg",
+        "medicineName": "Azithromycin 250mg",
+        "description": "Treats various types of infections. Broad-spectrum antibiotic used for respiratory infections, skin infections, ear infections, and sexually transmitted diseases.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     },
     {
-        "description": "I’ve been using this site to order my vitamins and supplements for a while now, and I’m very satisfied. The delivery is fast, the products are of high quality, and the prices are affordable. I highly recommend this platform!",
-        "name": "Richard Davis",
-        "image": "https://i.ibb.co/tXTGgCH/widely-smiling-businesswoman-working-laptop-sitting-cafe.jpg"
+        "medicineImage": "https://i.ibb.co/bQPhZw8/images-5.jpg",
+        "medicineName": "Lisinopril 10mg",
+        "description":  "Treats high blood pressure. Commonly prescribed for high blood pressure and heart failure, it works by relaxing blood vessels so blood can flow more easily.",
+        "sellerEmail": "abraralfi111@gmail.com",
+        "status": "Approved"
     }
 ]
