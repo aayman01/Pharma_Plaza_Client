@@ -28,7 +28,7 @@ const Slider = () => {
       >
         {approvedAdvertisements.map((item) => (
           <SwiperSlide key={item._id}>
-            <div className="relative overflow-hidden p-12 text-center h-[400px] bg-[#076cec] mt-10">
+            <div className="relative overflow-hidden p-12 text-center h-[500px] bg-[#076cec] ">
               <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed">
                 <div className="flex flex-col lg:flex-row h-full items-center justify-between p-5 lg:p-20 gap-6">
                   <div className="space-y-4">
