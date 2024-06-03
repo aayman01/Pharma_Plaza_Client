@@ -1,9 +1,24 @@
-import { FaEye } from "react-icons/fa6";
 import { useLoaderData } from "react-router-dom";
+import SelectButton from "../Shared/SelectButton/SelectButton";
+import { FaEye } from "react-icons/fa6";
+import ShowModal from "../Shared/ShowModal/ShowModal";
+import { useState } from "react";
 
 const SpecificCategoryList = () => {
     const items = useLoaderData();
-    console.log(items)
+    const [modalData, setModalData] = useState({});
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = (item) => {
+      setModalData(item);
+      setModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+      setModalData({});
+      setModalOpen(false)
+    }
+    // console.log(items)
     return (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mt-8">
@@ -16,7 +31,6 @@ const SpecificCategoryList = () => {
                 <th>#</th>
                 <th>Product Name</th>
                 <th>Company Name</th>
-                <th>Category Name</th>
                 <th>Price Per Unit</th>
                 <th>Add to Cart</th>
                 <th>Details</th>
@@ -39,17 +53,15 @@ const SpecificCategoryList = () => {
                     </div>
                   </td>
                   <td className="font-medium">{product?.companyName}</td>
-                  <td className="font-medium">{product?.categoryName}</td>
                   <td className="font-bold">${product?.pricePerUnit}</td>
                   <td>
-                    <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
-                      Select
-                    </button>
+                    <SelectButton />
                   </td>
                   <td>
-                    <button>
+                    <button onClick={() => handleOpenModal(product)}>
                       <FaEye className="text-xl text-[#076cec]" />
                     </button>
+                    <ShowModal isOpen={isModalOpen} onClose={handleCloseModal} data={modalData}/>
                   </td>
                 </tr>
               ))}

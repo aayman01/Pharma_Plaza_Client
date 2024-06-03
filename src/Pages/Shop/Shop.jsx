@@ -1,9 +1,24 @@
 import { FaEye } from "react-icons/fa6";
 import useProduct from "../../Hooks/useProduct";
+import SelectButton from "../Shared/SelectButton/SelectButton";
+import ShowModal from "../Shared/ShowModal/ShowModal";
+import { useState } from "react";
 
 const Shop = () => {
     const {products} = useProduct();
-    console.log(products)
+    
+    const [modalData, setModalData] = useState({});
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = (item) => {
+      setModalData(item);
+      setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+      setModalData({});
+      setModalOpen(false);
+    };
     return (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mt-8">
@@ -66,14 +81,19 @@ const Shop = () => {
                   <td className="font-medium">{product?.categoryName}</td>
                   <td className="font-bold">${product?.pricePerUnit}</td>
                   <td>
-                    <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] ">
-                      Select
-                    </button>
+                    <SelectButton />
                   </td>
                   <td>
-                    <button>
-                      <FaEye className="text-xl text-[#076cec]" />
-                    </button>
+                    <td>
+                      <button onClick={() => handleOpenModal(product)}>
+                        <FaEye className="text-xl text-[#076cec]" />
+                      </button>
+                      <ShowModal
+                        isOpen={isModalOpen}
+                        onClose={handleCloseModal}
+                        data={modalData}
+                      />
+                    </td>
                   </td>
                 </tr>
               ))}
