@@ -6,6 +6,8 @@ import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Shop from "../Pages/Shop/Shop";
 import SpecificCategoryList from "../Pages/SpecificCategoryList/SpecificCategoryList";
+import Cart from "../Pages/Cart/Cart";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -32,8 +34,16 @@ export const router = createBrowserRouter([
       {
         path: "/category/:name",
         element: <SpecificCategoryList></SpecificCategoryList>,
-        loader: ({params}) =>
+        loader: ({ params }) =>
           fetch(`http://localhost:5000/category/${params.name}`),
+      },
+      {
+        path: "cart",
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
       },
     ],
   },
