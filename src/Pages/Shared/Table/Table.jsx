@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import ShowModal from "../ShowModal/ShowModal";
+import useAuth from "../../../Hooks/useAuth";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
+
 
 
 const Table = ({ product, idx }) => {
-
-  const [modalData, setModalData] = useState({});
-  const [isModalOpen, setModalOpen] = useState(false);
+    const {_id,name,image,companyName,pricePerUnit,quantity} = product;
+    const {user} = useAuth();
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [modalData, setModalData] = useState({});
+    const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = (item) => {
     setModalData(item);
@@ -14,11 +23,51 @@ const Table = ({ product, idx }) => {
   };
 
   const handleCloseModal = () => {
-    setModalData({});
     setModalOpen(false);
   };
 
-  const handleAddCart = () => {};
+  const handleAddCart = () => {
+    if(user && user.email){
+        const cartItem = {
+            productId : _id,
+            email : user?.email,
+            name,
+            image,
+            companyName,
+            pricePerUnit,
+            quantity
+        } 
+        axiosSecure.post("/carts",cartItem)
+        .then(res => {
+            console.log(res.data)
+            if(res.data.insertedId){
+                Swal.fire({
+                  position: "center",
+                  icon: "success",
+                  title: `${name} added your cart`,
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+            }
+        })
+    }
+    else{
+        // if not logged in redirect to log in page
+        Swal.fire({
+          title: "You are not logged in",
+          text: "Please login to add to the cart",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, Login",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/login", { state: { from: location } });
+          }
+        });
+    }
+  };
   return (
     <tr className="text-base" key={product._id}>
       <td className="font-bold">{idx + 1}</td>

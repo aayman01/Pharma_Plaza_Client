@@ -1,29 +1,9 @@
 import { useLoaderData } from "react-router-dom";
-// import { FaEye } from "react-icons/fa6";
-// import ShowModal from "../Shared/ShowModal/ShowModal";
-// import { useState } from "react";
 import Table from "../Shared/Table/Table";
 
 const SpecificCategoryList = () => {
     const items = useLoaderData();
-    // const [modalData, setModalData] = useState({});
-    // const [isModalOpen, setModalOpen] = useState(false);
-
-    // const handleOpenModal = (item) => {
-    //   setModalData(item);
-    //   setModalOpen(true);
-    // }
-
-    // const handleCloseModal = () => {
-    //   setModalData({});
-    //   setModalOpen(false)
-    // }
-
-    // const handleAddCart = () => {
-
-    // }
-
-
+    
     return (
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mt-8">

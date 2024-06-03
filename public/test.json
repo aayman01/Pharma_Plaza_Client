@@ -6,7 +6,7 @@
     "categoryName": "Prescription Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 10.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -18,7 +18,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 15.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -30,7 +30,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 4.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pieces",
     "discountPercentage": 0
@@ -42,7 +42,7 @@
     "categoryName": "Personal Care",
     "companyName": "Nivea",
     "pricePerUnit": 8.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -54,7 +54,7 @@
     "categoryName": "Medical Devices",
     "companyName": "Omron",
     "pricePerUnit": 59.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -66,7 +66,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Pampers",
     "pricePerUnit": 24.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pack",
     "discountPercentage": 0
@@ -78,7 +78,7 @@
     "categoryName": "Herbal Products",
     "companyName": "HerbalLife",
     "pricePerUnit": 12.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pack",
     "discountPercentage": 0
@@ -90,7 +90,7 @@
     "categoryName": "Prescription Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 12.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -102,7 +102,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 19.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -114,7 +114,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 6.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "oz",
     "discountPercentage": 0
@@ -126,7 +126,7 @@
     "categoryName": "Personal Care",
     "companyName": "Dove",
     "pricePerUnit": 7.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -138,7 +138,7 @@
     "categoryName": "Medical Devices",
     "companyName": "Roche",
     "pricePerUnit": 49.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -150,7 +150,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Johnson's",
     "pricePerUnit": 5.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -162,7 +162,7 @@
     "categoryName": "Herbal Products",
     "companyName": "HerbalLife",
     "pricePerUnit": 10.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pack",
     "discountPercentage": 0
@@ -174,7 +174,7 @@
     "categoryName": "Prescription Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 14.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -186,7 +186,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 16.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "gummies",
     "discountPercentage": 0
@@ -198,7 +198,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 3.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -210,7 +210,7 @@
     "categoryName": "Personal Care",
     "companyName": "Cetaphil",
     "pricePerUnit": 11.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -222,7 +222,7 @@
     "categoryName": "Medical Devices",
     "companyName": "HealthTech",
     "pricePerUnit": 9.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -234,7 +234,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Aveeno",
     "pricePerUnit": 6.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -246,7 +246,7 @@
     "categoryName": "Herbal Products",
     "companyName": "HerbalLife",
     "pricePerUnit": 14.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "capsules",
     "discountPercentage": 0
@@ -258,7 +258,7 @@
     "categoryName": "Prescription Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 17.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -270,7 +270,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 13.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -282,7 +282,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 5.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pieces",
     "discountPercentage": 0
@@ -294,7 +294,7 @@
     "categoryName": "Personal Care",
     "companyName": "Garnier",
     "pricePerUnit": 6.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -306,7 +306,7 @@
     "categoryName": "Medical Devices",
     "companyName": "HealthTech",
     "pricePerUnit": 29.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -318,7 +318,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Gerber",
     "pricePerUnit": 2.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "jar",
     "discountPercentage": 0
@@ -330,7 +330,7 @@
     "categoryName": "Prescription Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 9.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -342,7 +342,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 21.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "capsules",
     "discountPercentage": 0
@@ -354,7 +354,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 7.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -366,7 +366,7 @@
     "categoryName": "Personal Care",
     "companyName": "Head & Shoulders",
     "pricePerUnit": 5.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -378,7 +378,7 @@
     "categoryName": "Medical Devices",
     "companyName": "HealthTech",
     "pricePerUnit": 39.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -390,7 +390,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Huggies",
     "pricePerUnit": 3.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "pack",
     "discountPercentage": 0
@@ -402,7 +402,7 @@
     "categoryName": "Herbal Products",
     "companyName": "HerbalLife",
     "pricePerUnit": 22.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "capsules",
     "discountPercentage": 0
@@ -414,7 +414,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 14.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "IU",
     "discountPercentage": 0
@@ -426,7 +426,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 5.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "oz",
     "discountPercentage": 0
@@ -438,7 +438,7 @@
     "categoryName": "Medical Devices",
     "companyName": "HealthTech",
     "pricePerUnit": 19.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "box",
     "discountPercentage": 0
@@ -450,7 +450,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Similac",
     "pricePerUnit": 29.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "can",
     "discountPercentage": 0
@@ -462,7 +462,7 @@
     "categoryName": "Vitamins & Supplements",
     "companyName": "NutriHealth",
     "pricePerUnit": 9.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -474,7 +474,7 @@
     "categoryName": "First Aid",
     "companyName": "HealthGuard",
     "pricePerUnit": 6.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "oz",
     "discountPercentage": 0
@@ -486,7 +486,7 @@
     "categoryName": "Personal Care",
     "companyName": "Pantene",
     "pricePerUnit": 5.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "ml",
     "discountPercentage": 0
@@ -498,7 +498,7 @@
     "categoryName": "Medical Devices",
     "companyName": "HealthTech",
     "pricePerUnit": 54.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "unit",
     "discountPercentage": 0
@@ -510,7 +510,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "Enfamil",
     "pricePerUnit": 31.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "can",
     "discountPercentage": 0
@@ -522,7 +522,7 @@
     "categoryName": "Herbal Products",
     "companyName": "HerbalLife",
     "pricePerUnit": 9.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "bags",
     "discountPercentage": 0
@@ -534,7 +534,7 @@
     "categoryName": "Over-the-Counter Medications",
     "companyName": "PharmaCo",
     "pricePerUnit": 7.49,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "mg",
     "discountPercentage": 0
@@ -546,7 +546,7 @@
     "categoryName": "Baby & Child Care",
     "companyName": "A&D",
     "pricePerUnit": 4.99,
-    "quantity": 0,
+    "quantity": 1,
     "sellerEmail": "abraralfi1111@gmail.com",
     "itemMassUnit": "oz",
     "discountPercentage": 0
