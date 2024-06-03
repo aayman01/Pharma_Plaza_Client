@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import log from "../../assets/log.png";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Login = () => {
   const { signIn, googleSignIn, gitHubSignIn } = useAuth();
   const {
@@ -14,6 +15,9 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const location = useLocation();
+  const axiosPublic = useAxiosPublic();
+
   const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
@@ -35,14 +39,23 @@ const Login = () => {
   const handleGoogleLogIn = () => {
     googleSignIn()
     .then(()=>{
-      navigate(from, { replace: true });
+      axiosPublic.post('/users',{role : 'user'})
+      .then(res => {
+        if(res.data.insertedId){
+          navigate(from, { replace: true });
+        }
+      })
     })
     .catch()
   };
   const handleGitHubLogIn = () => {
     gitHubSignIn()
     .then(()=>{
-      navigate(from, { replace: true });
+      axiosPublic.post("/users", { role: "user" }).then((res) => {
+        if (res.data.insertedId) {
+          navigate(from, { replace: true });
+        }
+      });
     })
     .catch()
   }

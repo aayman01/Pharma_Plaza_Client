@@ -32,15 +32,26 @@ const Register = () => {
           const image = res?.data?.data?.display_url;
           updateUserProfile(data.name, image)
             .then(() => {
-              reset();
-              Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Successfully Sign up",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-              navigate("/login");
+              const userInfo = {
+                name : data.name,
+                email : data.email,
+                role : data.role
+              }
+              axiosPublic.post('/users',userInfo)
+              .then((res)=>{
+                console.log(res.data)
+                if(res.data.insertedId){
+                  reset();
+                  Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Successfully Sign up",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate("/");
+                }
+              })  
             })
             .catch((err) => {
               console.log(err);
