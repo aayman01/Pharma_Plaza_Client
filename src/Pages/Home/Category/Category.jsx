@@ -36,7 +36,7 @@ const Category = () => {
   return (
     <div>
       <SectionTitle
-        heading="Our Products"
+        heading="Our Popular Categories"
         subHeading="Find the best quality products here"
       ></SectionTitle>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-2">
