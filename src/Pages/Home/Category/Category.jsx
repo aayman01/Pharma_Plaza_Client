@@ -1,4 +1,3 @@
-import useProduct from "../../../Hooks/useProduct";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import CategoryCard from "./CategoryCard";
 import img1 from '../../../assets/Prescription.png'; 
@@ -8,9 +7,12 @@ import img4 from '../../../assets/first-aid-kit.png';
 import img5 from '../../../assets/herbal.png'; 
 import img6 from '../../../assets/baby-boy.png'; 
 import img7 from '../../../assets/blood-pressure.png'; 
+import { ClipLoader } from "react-spinners";
+import useAllProducts from "../../../Hooks/useAllProducts";
 
 const Category = () => {
-  const { products } = useProduct();
+  const {products ,isPending} = useAllProducts()
+  
   const prescriptions = products.filter(
     (item) => item.categoryName === "Prescription Medications"
   );
@@ -32,7 +34,13 @@ const Category = () => {
   const medicalDevice = products.filter(
     (item) => item.categoryName === "Medical Devices"
   );
-  
+  if (isPending) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <ClipLoader color="#076cec" size={50} />
+      </div>
+    );
+  }
   return (
     <div>
       <SectionTitle

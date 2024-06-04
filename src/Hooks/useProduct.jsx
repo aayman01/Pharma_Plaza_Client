@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
 const useProduct = (searchText, currentPage, itemsPerPage,sort) => {
-  console.log("in useProduct", currentPage, itemsPerPage);
+//   console.log("in useProduct", currentPage, itemsPerPage);
   const axiosPublic = useAxiosPublic();
+  
   const {
     data: products = [],
     isPending,

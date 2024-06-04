@@ -8,10 +8,12 @@ import "swiper/css/pagination";
 
 import { FreeMode, Pagination } from "swiper/modules";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
-import useProduct from "../../../Hooks/useProduct";
+
+import useAllProducts from "../../../Hooks/useAllProducts";
 
 const Discount = () => {
-  const { products } = useProduct();
+  const {products} = useAllProducts();
+  
   const discountProduct = products.filter((product) => product.discountPercentage > 0);
   console.log(discountProduct);
   return (
