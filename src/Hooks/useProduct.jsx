@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "./useAxiosPublic";
 
-const useProduct = (searchText, currentPage, itemsPerPage) => {
+const useProduct = (searchText, currentPage, itemsPerPage,sort) => {
   console.log("in useProduct", currentPage, itemsPerPage);
   const axiosPublic = useAxiosPublic();
   const {
@@ -13,7 +13,7 @@ const useProduct = (searchText, currentPage, itemsPerPage) => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await axiosPublic.get(
-        `/products?search=${searchText}&page=${currentPage}&size=${itemsPerPage}`
+        `/products?search=${searchText}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}`
       );
       console.log(res.data);
       return res.data;

@@ -9,7 +9,8 @@ const Shop = () => {
   const [count , setCount] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const { products, refetch, isLoading } = useProduct(searchText,currentPage,itemsPerPage);
+  const [sort, setSort] = useState(''); 
+  const { products, refetch, isLoading } = useProduct(searchText,currentPage,itemsPerPage,sort);
   const axiosPublic = useAxiosPublic();
 
   // search functionality
@@ -80,12 +81,20 @@ const Shop = () => {
         </form>
         {/* sort */}
         <div>
-          <select defaultValue="" className="select select-bordered w-full">
+          <select
+            onChange={(e) => {
+              setSort(e.target.value);
+              refetch();
+            }}
+            defaultValue=""
+            value={sort}
+            className="select select-bordered w-full"
+          >
             <option disabled value="">
-              Sort by
+              Sort by price
             </option>
-            <option value="Price low to high">Price: low to high</option>
-            <option value="Price high to low">Price: high to low</option>
+            <option value="dsc">Price: low to high</option>
+            <option value="asc">Price: high to low</option>
           </select>
         </div>
       </div>
@@ -111,10 +120,11 @@ const Shop = () => {
       {/* pagination */}
       <div className="flex justify-center my-12 ">
         {/* Previous Button */}
-        <button 
-        disabled={currentPage === 1}
-        onClick={()=>handlePaginationButton(currentPage - 1)}
-        className="px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-blue-500  hover:text-white">
+        <button
+          disabled={currentPage === 1}
+          onClick={() => handlePaginationButton(currentPage - 1)}
+          className="px-4 py-2 mx-1 text-gray-700 disabled:text-gray-500 capitalize bg-gray-200 rounded-md disabled:cursor-not-allowed disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:bg-blue-500  hover:text-white"
+        >
           <div className="flex items-center -mx-1">
             <span className="mx-1 font-medium">previous</span>
           </div>
@@ -123,19 +133,22 @@ const Shop = () => {
         {pages.map((btnNum) => (
           <button
             key={btnNum}
-            onClick={()=>handlePaginationButton(btnNum)}
+            onClick={() => handlePaginationButton(btnNum)}
             className={`hidden ${
-              currentPage === btnNum ? "bg-[#076cec] text-white font-medium" : ""
+              currentPage === btnNum
+                ? "bg-[#076cec] text-white font-medium"
+                : ""
             } px-4 py-2 mx-1 transition-colors duration-300 transform font-medium rounded-md sm:inline hover:bg-blue-500  hover:text-white`}
           >
             {btnNum}
           </button>
         ))}
         {/* Next Button */}
-        <button 
-        disabled={currentPage === numberOfPages}
-        onClick={()=>handlePaginationButton(currentPage + 1)}
-        className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-blue-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500">
+        <button
+          disabled={currentPage === numberOfPages}
+          onClick={() => handlePaginationButton(currentPage + 1)}
+          className="px-4 py-2 mx-1 text-gray-700 transition-colors duration-300 transform bg-gray-200 rounded-md hover:bg-blue-500 disabled:hover:bg-gray-200 disabled:hover:text-gray-500 hover:text-white disabled:cursor-not-allowed disabled:text-gray-500"
+        >
           <div className="flex items-center -mx-1">
             <span className="mx-1 font-medium">Next</span>
           </div>
