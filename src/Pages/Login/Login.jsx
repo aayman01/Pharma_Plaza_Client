@@ -38,8 +38,13 @@ const Login = () => {
   };
   const handleGoogleLogIn = () => {
     googleSignIn()
-    .then(()=>{
-      axiosPublic.post('/users',{role : 'user'})
+    .then((result)=>{
+      const userInfo = {
+        email: result.user?.email,
+        name: result.user?.displayName,
+        role : "user"
+      };
+      axiosPublic.post('/users',userInfo)
       .then(res => {
         if(res.data.insertedId){
           navigate(from, { replace: true });
@@ -50,8 +55,13 @@ const Login = () => {
   };
   const handleGitHubLogIn = () => {
     gitHubSignIn()
-    .then(()=>{
-      axiosPublic.post("/users", { role: "user" }).then((res) => {
+    .then((result)=>{
+      const userInfo = {
+        name: result.user?.displayName,
+        email: result.user?.email,
+        role: "user",
+      };
+      axiosPublic.post("/users", userInfo).then((res) => {
         if (res.data.insertedId) {
           navigate(from, { replace: true });
         }

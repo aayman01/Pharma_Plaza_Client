@@ -8,6 +8,7 @@ import Shop from "../Pages/Shop/Shop";
 import SpecificCategoryList from "../Pages/SpecificCategoryList/SpecificCategoryList";
 import Cart from "../Pages/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../Pages/Shared/NavBar/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: 'updateProfile',
+        element:<UpdateProfile/>
+      }
     ],
   },
 ]);

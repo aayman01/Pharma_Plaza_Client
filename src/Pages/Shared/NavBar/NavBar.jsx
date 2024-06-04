@@ -116,10 +116,12 @@ const NavBar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <li>
-                  <button className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white">
-                    Update Profile
-                  </button>
+                <li className="hover:bg-[#076cec] rounded-lg">
+                  <Link to="/updateProfile">
+                    <button className="font-semibold  p-1 text-black hover:text-white">
+                      Update Profile
+                    </button>
+                  </Link>
                 </li>
                 <li>
                   <button className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white">
