@@ -1,11 +1,18 @@
 import useProduct from "../../Hooks/useProduct";
 import { ClipLoader } from "react-spinners";
 import Table from "../Shared/Table/Table";
+import { useState } from "react";
 
 const Shop = () => {
-  const { products, isPending } = useProduct();
+  const [searchText, setSearchText] = useState('');
+ 
+ const { products, refetch, isLoading } = useProduct(searchText);
 
-  if (isPending) {
+  const handleSearch = e =>{
+    e.preventDefault();
+    refetch();
+  }
+  if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <ClipLoader color="#076cec" size={50} />
@@ -21,16 +28,24 @@ const Shop = () => {
         </p>
       </div>
       <div className="flex items-center justify-center gap-7 px-10 pb-10">
-        <div className="flex items-center justify-center">
+        <form
+          onSubmit={handleSearch}
+          className="flex items-center justify-center gap-1"
+        >
           <input
             type="text"
             placeholder="Type here"
+            onChange={(e) => setSearchText(e.target.value)}
+            value={searchText}
             className="input input-bordered w-full"
           />
-          <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE]">
-            Search
-          </button>
-        </div>
+          <input
+            className="btn text-white bg-[#076cec] hover:bg-[#0072CE]"
+            type="submit"
+            value="Search"
+          />
+          
+        </form>
         <div>
           <select defaultValue="" className="select select-bordered w-full">
             <option disabled value="">
