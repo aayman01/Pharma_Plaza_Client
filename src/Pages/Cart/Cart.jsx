@@ -8,27 +8,25 @@ import Swal from "sweetalert2";
 import QuantityButton from "../Shared/Quantity Button/QuantityButton";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
+import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
 
 const Cart = () => {
   const { carts, isLoading, refetch } = useCart();
   const [cartItems, setCartItems] = useState([]);
   const axiosSecure = useAxiosSecure();
   const {user} = useAuth();
- 
-  console.log(cartItems)
   
-  // const totalPrice = carts.reduce(
-  //   (total, item) => total + item.pricePerUnit,
-  //   0
-  // );
-  // console.log(totalPrice);
-  useEffect(() => {
+ 
+  useEffect(() => {   
     setCartItems(
       carts.map((product) => ({
         ...product,
         totalPrice: product.pricePerUnit,
       }))
-    );
+    );   
   }, [carts]);
 
   const handleQuantityChange = (id, newQuantity) => {
@@ -97,13 +95,24 @@ const Cart = () => {
     });
   }
 
-  // const handlePay = () => {
-  //   const cartItems = {
-  //     userEmail : user.email,
-      
+  const handleUpdate = (id,quantity,price) => {
 
-  //   }
-  // }
+    const cartData = {
+      quantity : quantity,
+      price : price
+    }
+    axiosSecure
+      .put(`/update-cart/${id}`, cartData)
+      .then(() => {
+        // if (res.data.modifiedCount){
+           
+        // }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -139,7 +148,7 @@ const Cart = () => {
               <FaTrash /> Clear All Cart
             </button>
           </div>
-          <div className="overflow-x-auto border rounded-lg mb-10">
+          <div className="overflow-x-auto border rounded-lg mb-5">
             <table className="table mt-5">
               <thead>
                 <tr className="text-xl">
@@ -149,6 +158,7 @@ const Cart = () => {
                   <th>Price Per Unit</th>
                   <th>Quantity</th>
                   <th>Total Price</th>
+                  <th>Action</th>
                   <th>Remove</th>
                 </tr>
               </thead>
@@ -157,7 +167,7 @@ const Cart = () => {
                   <tr key={cart._id}>
                     <td className="font-bold">{idx + 1}</td>
                     <td>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center">
                         <div className="avatar">
                           <div className="mask mask-squircle w-12 h-12">
                             <img src={cart.image} alt="item image" />
@@ -180,8 +190,20 @@ const Cart = () => {
                         }
                       ></QuantityButton>
                     </td>
+                    <td className="font-medium">{cart.totalPrice}</td>
                     <td className="font-medium">
-                      {cart.totalPrice.toFixed(2)}
+                      <button
+                        className="btn bg-green-400 hover:bg-green-500 text-white"
+                        onClick={() =>
+                          handleUpdate(
+                            cart.productId,
+                            cart.quantity,
+                            cart.pricePerUnit
+                          )
+                        }
+                      >
+                        Update
+                      </button>
                     </td>
                     <td>
                       <button
@@ -195,6 +217,13 @@ const Cart = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+          <div className="flex items-center justify-end mr-2 mb-10">
+            <Link to='/payment'>
+              <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] font-bold text-lg">
+                <FaShoppingCart /> checkout
+              </button>
+            </Link>
           </div>
         </div>
       )}

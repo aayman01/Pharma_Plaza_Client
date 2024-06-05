@@ -9,6 +9,7 @@ import SpecificCategoryList from "../Pages/SpecificCategoryList/SpecificCategory
 import Cart from "../Pages/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../Pages/Shared/NavBar/UpdateProfile";
+import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
       {
         path: 'updateProfile',
         element:<UpdateProfile/>
+      },
+      {
+        path: 'payment',
+        element : <Payment/>
       }
     ],
   },
