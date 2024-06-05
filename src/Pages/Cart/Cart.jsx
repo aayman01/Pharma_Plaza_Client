@@ -5,15 +5,45 @@ import NavBar from "../Shared/NavBar/NavBar";
 import Footer from "../Shared/Footer/Footer";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import QuantityButton from "../Shared/Quantity Button/QuantityButton";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const { carts, isLoading, refetch } = useCart();
+  const [cartItems, setCartItems] = useState([]);
   const axiosSecure = useAxiosSecure();
-  const totalPrice = carts.reduce(
-    (total, item) => total + item.pricePerUnit,
-    0
-  );
+ 
+  console.log(cartItems)
+  
+  // const totalPrice = carts.reduce(
+  //   (total, item) => total + item.pricePerUnit,
+  //   0
+  // );
   // console.log(totalPrice);
+  useEffect(() => {
+    setCartItems(
+      carts.map((product) => ({
+        ...product,
+        totalPrice: product.pricePerUnit,
+      }))
+    );
+  }, [carts]);
+
+  const handleQuantityChange = (id, newQuantity) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item._id === id
+          ? {
+              ...item,
+              quantity : newQuantity,
+              totalPrice : item.pricePerUnit * newQuantity,
+            }
+          : item
+      )
+    );
+  };
+
+  console.log(cartItems)
   const handleSingleDelete = (id) => {
     console.log(id)
     Swal.fire({
@@ -67,11 +97,12 @@ const Cart = () => {
                 <th>Company</th>
                 <th>Price Per Unit</th>
                 <th>Quantity</th>
+                <th>Total Price</th>
                 <th>Remove</th>
               </tr>
             </thead>
             <tbody>
-              {carts.map((cart, idx) => (
+              {cartItems.map((cart, idx) => (
                 <tr key={cart._id}>
                   <td className="font-bold">{idx + 1}</td>
                   <td>
@@ -91,7 +122,16 @@ const Cart = () => {
                     {cart?.pricePerUnit}
                   </td>
                   <td>
-                    <button>Quantity</button>
+                    <QuantityButton
+                      quantity={cart.quantity}
+                      onQuantityChange={(newQuantity) =>
+                        handleQuantityChange(cart._id, newQuantity)
+                      }
+                      
+                    ></QuantityButton>
+                  </td>
+                  <td className="font-medium">
+                    {(cart.totalPrice).toFixed(2)}
                   </td>
                   <td>
                     <button
