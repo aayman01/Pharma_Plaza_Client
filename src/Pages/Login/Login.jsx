@@ -7,68 +7,83 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const Login = () => {
-  const { signIn, googleSignIn, gitHubSignIn } = useAuth();
+  const { signIn, googleSignIn, gitHubSignIn,loading } = useAuth();
   const {
     register,
     handleSubmit,
-    reset,
+    
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
   const location = useLocation();
   const axiosPublic = useAxiosPublic();
-
-  const from = location.state?.from?.pathname || "/";
+  console.log(location)
+  
 
   const onSubmit = (data) => {
     console.log(data);
     signIn(data.email, data.password)
       .then(() => {
-        reset();
+        // reset();
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Successfully Logged in",
+          title: "Successfully logged in",
           showConfirmButton: false,
           timer: 1500,
         });
-        navigate(from, { replace: true });
+         navigate(location.state ? location.state : "/");
       })
       .catch();
   };
   const handleGoogleLogIn = () => {
     googleSignIn()
-    .then((result)=>{
-      const userInfo = {
-        email: result.user?.email,
-        name: result.user?.displayName,
-        role : "user"
-      };
-      axiosPublic.post('/users',userInfo)
-      .then(res => {
-        if(res.data.insertedId){
-          navigate(from, { replace: true });
-        }
+      .then(async (result) => {
+        const userInfo = {
+          email: result.user?.email,
+          name: result.user?.displayName,
+          role: "user",
+        };
+        console.log(userInfo)
+        await axiosPublic.post("/users", userInfo).then((res) => {
+          console.log(res.data)
+          if (res.data) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Successfully logged in",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(location.state ? location.state : "/");
+          }
+        });
       })
-    })
-    .catch()
+      .catch();
   };
   const handleGitHubLogIn = () => {
     gitHubSignIn()
-    .then((result)=>{
-      const userInfo = {
-        name: result.user?.displayName,
-        email: result.user?.email,
-        role: "user",
-      };
-      axiosPublic.post("/users", userInfo).then((res) => {
-        if (res.data.insertedId) {
-          navigate(from, { replace: true });
-        }
-      });
-    })
-    .catch()
-  }
+      .then(async(result) => {
+        const userInfo = {
+          name: result.user?.displayName,
+          email: result.user?.email,
+          role: "user",
+        };
+        await axiosPublic.post("/users", userInfo).then((res) => {
+          if (res.data) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Successfully logged in",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate(location.state ? location.state : '/');
+          }
+        });
+      })
+      .catch();
+  };
   return (
     <div className="max-w-6xl mx-auto px-4">
       <div className="hero min-h-screen">
@@ -130,10 +145,10 @@ const Login = () => {
               -Or login with-
             </p>
             <div className="flex text-2xl items-center gap-3 justify-center">
-              <button onClick={handleGoogleLogIn}>
+              <button disabled={loading} onClick={handleGoogleLogIn}>
                 <FcGoogle />
               </button>
-              <button onClick={handleGitHubLogIn}>
+              <button disabled={loading} onClick={handleGitHubLogIn}>
                 <FaGithub />
               </button>
             </div>

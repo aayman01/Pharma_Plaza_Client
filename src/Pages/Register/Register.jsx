@@ -1,5 +1,3 @@
-import { FaGithub } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import log from "../../assets/log.png";
 import { useForm } from "react-hook-form";
@@ -170,17 +168,6 @@ const Register = () => {
                   />
                 </div>
               </form>
-              <p className="text-center text-black mb-4 font-medium">
-                -Or login with-
-              </p>
-              <div className="flex text-2xl items-center gap-3 justify-center">
-                <button>
-                  <FcGoogle />
-                </button>
-                <button>
-                  <FaGithub />
-                </button>
-              </div>
               <p className="text-center text-black mt-4 pb-10 font-medium">
                 Already have an account?
                 <Link
