@@ -7,7 +7,7 @@ const NavBar = () => {
   // sky #dbf4fc
   // blue #076cec
   const {user, logOut} = useAuth();
-  console.log(user)
+  // console.log(user)
   const handleLogOut = () => {
     logOut()
     .then()
