@@ -48,13 +48,21 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'updateProfile',
-        element:<UpdateProfile/>
+        path: "updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
       {
-        path: 'payment',
-        element : <Payment/>
-      }
+        path: "payment",
+        element: (
+          <PrivateRoute>
+            <Payment />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

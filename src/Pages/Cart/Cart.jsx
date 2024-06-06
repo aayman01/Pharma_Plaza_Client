@@ -100,7 +100,7 @@ const Cart = () => {
 
     const cartData = {
       quantity : quantity,
-      price : price * quantity,
+      pricePerUnit : price * quantity,
     }
     axiosSecure
       .put(`/update-cart/${id}`, cartData)
@@ -182,7 +182,7 @@ const Cart = () => {
                     </td>
                     <td className="font-medium">{cart.companyName}</td>
                     <td className="font-medium text-left">
-                      {cart?.pricePerUnit}
+                      {cart?.pricePerUnit}$
                     </td>
                     <td>
                       <QuantityButton
@@ -192,7 +192,7 @@ const Cart = () => {
                         }
                       ></QuantityButton>
                     </td>
-                    <td className="font-medium">{cart.totalPrice}</td>
+                    <td className="font-medium">{cart.totalPrice}$</td>
                     <td className="font-medium">
                       <button
                         className="btn bg-green-400 hover:bg-green-500 text-white"
