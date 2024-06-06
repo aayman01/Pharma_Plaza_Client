@@ -10,6 +10,7 @@ import Cart from "../Pages/Cart/Cart";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../Pages/Shared/NavBar/UpdateProfile";
 import Payment from "../Pages/Payment/Payment";
+import Invoice from "../Pages/Invoice/Invoice";
 
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,12 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: 'invoice',
+        element:<PrivateRoute>
+          <Invoice/>
+        </PrivateRoute>
+      }
     ],
   },
 ]);
