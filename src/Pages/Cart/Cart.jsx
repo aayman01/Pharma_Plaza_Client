@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 // import { Link } from "react-router-dom";
 
 
@@ -99,14 +100,15 @@ const Cart = () => {
 
     const cartData = {
       quantity : quantity,
-      price : price
+      price : price * quantity,
     }
     axiosSecure
       .put(`/update-cart/${id}`, cartData)
-      .then(() => {
-        // if (res.data.modifiedCount){
-           
-        // }
+      .then((res) => {
+        if (res.data.modifiedCount > 0){
+          //  show toast
+          toast.success("Successfully Updated!");
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -219,12 +221,13 @@ const Cart = () => {
             </table>
           </div>
           <div className="flex items-center justify-end mr-2 mb-10">
-            <Link to='/payment'>
+            <Link to="/payment">
               <button className="btn text-white bg-[#076cec] hover:bg-[#0072CE] font-bold text-lg">
                 <FaShoppingCart /> checkout
               </button>
             </Link>
           </div>
+          <Toaster position="top-right" />
         </div>
       )}
       <Footer />
