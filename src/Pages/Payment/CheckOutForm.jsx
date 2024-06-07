@@ -5,6 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import moment from "moment";
 
 const CheckOutForm = () => {
   const stripe = useStripe();
@@ -89,6 +90,7 @@ const CheckOutForm = () => {
 
         const invoiceData = {
           email: user.email,
+          name: user.displayName,
           price: totalPrice,
           transactionId: paymentIntent.id,
           cartIds: carts.map((item) => item._id),
@@ -96,8 +98,9 @@ const CheckOutForm = () => {
             productId: item.productId,
             quantity: item.quantity,
             price: item.pricePerUnit,
+            productName : item.name,
           })),
-          date: new Date(),
+          date: moment().format("MMM Do YYYY"),
         };
         const res = await axiosSecure.post("/payments", payment);
         console.log("payment saved", res.data);
