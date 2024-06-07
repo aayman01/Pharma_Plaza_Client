@@ -1,0 +1,58 @@
+[
+    {
+        "medicineImage": "https://i.ibb.co/2jLdy3z/paracetamol-tablet-500-mg.jpg",
+        "medicineName": "Paracetamol 500mg",
+        "description": "Effective pain relief and fever reducer. Suitable for headaches, muscle pain, arthritis, backache, toothaches, colds, and fevers. Safe for adults and children over 6 years.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/T2V14cq/Ibuprofen-200mg1000.jpg",
+        "medicineName": "Ibuprofen 200mg",
+        "description": "Relieves pain and reduces inflammation. Ideal for treating minor aches and pains due to common cold, headaches, toothaches, muscle aches, arthritis, and menstrual cramps.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/0JVp975/58-08175.jpg",
+        "medicineName": "Cetirizine 10mg",
+        "description": "Allergy relief medication. Provides 24-hour relief from symptoms of hay fever and other upper respiratory allergies such as runny nose, sneezing, itchy/watery eyes, and itching of the throat or nose.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/H2YBrbB/images-3.jpg",
+        "medicineName": "Amoxicillin 500mg",
+        "description": "Antibiotic for bacterial infections. Effective against various bacterial infections including pneumonia, bronchitis, and infections of the ears, nose, throat, skin, and urinary tract.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/0JVp975/58-08175.jpg",
+        "medicineName": "Loratadine 10mg",
+        "description": "Non-drowsy allergy relief. Provides long-lasting relief from allergy symptoms like runny nose, sneezing, itchy/watery eyes, and itching of the nose or throat without causing drowsiness.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://via.placeholder.com/300x150",
+        "medicineName": "Metformin 500mg",
+        "description": "Helps control blood sugar levels. Commonly used for managing type 2 diabetes, it improves glucose tolerance and lowers both basal and postprandial plasma glucose levels.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Removed"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/jyb3RwV/images-4.jpg",
+        "medicineName": "Azithromycin 250mg",
+        "description": "Treats various types of infections. Broad-spectrum antibiotic used for respiratory infections, skin infections, ear infections, and sexually transmitted diseases.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    },
+    {
+        "medicineImage": "https://i.ibb.co/bQPhZw8/images-5.jpg",
+        "medicineName": "Lisinopril 10mg",
+        "description": "Treats high blood pressure. Commonly prescribed for high blood pressure and heart failure, it works by relaxing blood vessels so blood can flow more easily.",
+        "sellerEmail": "abraralfi1111@gmail.com",
+        "status": "Approved"
+    }
+]

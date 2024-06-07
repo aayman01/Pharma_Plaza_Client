@@ -5,23 +5,24 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { ClipLoader } from "react-spinners";
 
+
 const Invoice = () => {
     const axiosSecure = useAxiosSecure();
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false);
     useEffect(() =>{
         setLoading(true)
-        axiosSecure.get("/invoice")
-        .then(res => {
-            setData(res.data);
-            setLoading(false)
-        })
+        axiosSecure.get("/invoices").then((res) => {
+          console.log(res.data);
+          setData(res.data);
+          setLoading(false)
+        });
     },[axiosSecure])
-    const totalPrice = data[0].items.reduce(
+    const totalPrice = data[0]?.items.reduce(
       (total, item) => total + item.price,
       0
     );
-    console.log(totalPrice)
+    console.log(data)
     if(loading){
         return (
           <div className="min-h-screen flex items-center justify-center">
@@ -70,7 +71,7 @@ const Invoice = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data[0].items.map((item, idx) => (
+                    {data[0]?.items?.map((item, idx) => (
                       <tr key={item.productId} className="bg-[#dbf4fc] border">
                         <td>{idx + 1}</td>
                         <td>{item.productName}</td>

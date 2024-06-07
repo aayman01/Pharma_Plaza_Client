@@ -32,9 +32,9 @@ const Discount = () => {
         {discountProduct.map((item) => (
           <SwiperSlide key={item._id}>
             <div className="card h-[350px] bg-base-100 border">
-              <figure className="relative">
+              <figure className="relative mt-4">
                 <img
-                  className="w-[230px]"
+                  className="w-[230px] h-[250px]"
                   src={item.image}
                   alt="product image"
                 />
