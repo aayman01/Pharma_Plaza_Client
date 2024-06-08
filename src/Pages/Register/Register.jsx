@@ -134,8 +134,8 @@ const Register = () => {
                       <option disabled value="">
                         Select a role
                       </option>
-                      <option value="User">User</option>
-                      <option value="Seller">Seller</option>
+                      <option value="user">User</option>
+                      <option value="seller">Seller</option>
                     </select>
                     {errors.role && (
                       <span className="text-red-500 mt-2">

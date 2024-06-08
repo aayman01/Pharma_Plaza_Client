@@ -2,11 +2,13 @@ import { TiShoppingCart } from "react-icons/ti";
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/icon.png'
 import useAuth from "../../../Hooks/useAuth";
+import useRole from "../../../Hooks/useRole";
 
 const NavBar = () => {
   // sky #dbf4fc
   // blue #076cec
   const {user, logOut} = useAuth();
+  const [role] = useRole();
   // console.log(user)
   const handleLogOut = () => {
     logOut()
@@ -123,11 +125,15 @@ const NavBar = () => {
                     </button>
                   </Link>
                 </li>
-                <li>
-                  <button className="font-semibold p-2 hover:bg-[#076cec] text-black hover:text-white">
-                    Dashboard
-                  </button>
-                </li>
+                {
+                  role === "admin" && <Link to='dashboard/adminHome'><li>Dashboard</li></Link>
+                }
+                {
+                  role === "seller" && <Link to='dashboard/sellerHome'><li>Dashboard</li></Link>
+                }
+                {
+                  role === "user" && <Link to='dashboard/paymentHistory'><li>Dashboard</li></Link>
+                }
                 <li>
                   <button
                     onClick={handleLogOut}
