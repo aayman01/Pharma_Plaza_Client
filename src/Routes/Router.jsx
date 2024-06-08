@@ -14,6 +14,8 @@ import Invoice from "../Pages/Invoice/Invoice";
 import Dashboard from "../Layout/Dashboard";
 import AdminHome from "../Pages/Dashboard/Admin/AdminHome";
 import ManageMedicines from "../Pages/Dashboard/Seller/ManageMedicines";
+import SellerPaymentHistory from "../Pages/Dashboard/Seller/SellerPaymentHistory";
+import UserPayment from "../Pages/Dashboard/User/UserPayment";
 
 export const router = createBrowserRouter([
   {
@@ -93,7 +95,16 @@ export const router = createBrowserRouter([
       // seller route
       {
         path: "manageMedicine",
-        element: <ManageMedicines/>
+        element: <ManageMedicines />,
+      },
+      {
+        path: "paymentHistory",
+        element: <SellerPaymentHistory />,
+      },
+      // user route
+      {
+        path: "payment",
+        element: <UserPayment/>
       },
     ],
   },

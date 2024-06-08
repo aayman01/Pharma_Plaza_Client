@@ -4,7 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 const ManageMedicines = () => {
     const { products } = useAllProducts();
     const {user} = useAuth();
-    const seller = products.filter(product => product.sellerEmail = `${user.email}`);
+    const seller = products.filter(product => product.sellerEmail === `${user.email}`);
     console.log(seller)
     return (
       <div>

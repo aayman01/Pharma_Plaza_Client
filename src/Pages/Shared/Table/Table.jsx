@@ -9,7 +9,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Table = ({ product, idx }) => {
-    const {_id,name,image,companyName,pricePerUnit,quantity} = product;
+    const {
+      _id,
+      name,
+      image,
+      companyName,
+      pricePerUnit,
+      quantity,
+      sellerEmail,
+    } = product;
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
@@ -29,14 +37,15 @@ const Table = ({ product, idx }) => {
   const handleAddCart = () => {
     if(user && user.email){
         const cartItem = {
-            productId : _id,
-            email : user?.email,
-            name,
-            image,
-            companyName,
-            pricePerUnit,
-            quantity
-        } 
+          productId: _id,
+          email: user?.email,
+          name,
+          image,
+          companyName,
+          pricePerUnit,
+          quantity,
+          sellerEmail,
+        }; 
         axiosSecure.post("/carts",cartItem)
         .then(res => {
             console.log(res.data)

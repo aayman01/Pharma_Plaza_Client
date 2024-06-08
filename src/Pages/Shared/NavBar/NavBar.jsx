@@ -118,22 +118,41 @@ const NavBar = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <li className="hover:bg-[#076cec] rounded-lg">
-                  <Link to="/updateProfile">
+                <Link to="/updateProfile">
+                  <li className="hover:bg-[#076cec] rounded-lg">
                     <button className="font-semibold  p-1 text-black hover:text-white">
                       Update Profile
                     </button>
+                  </li>
+                </Link>
+
+                {role === "admin" && (
+                  <Link to="dashboard/adminHome">
+                    <li className="hover:bg-[#076cec] rounded-lg">
+                      <button className="font-semibold  p-2 text-black hover:text-white">
+                        Dashboard
+                      </button>
+                    </li>
                   </Link>
-                </li>
-                {
-                  role === "admin" && <Link to='dashboard/adminHome'><li>Dashboard</li></Link>
-                }
-                {
-                  role === "seller" && <Link to='dashboard/sellerHome'><li>Dashboard</li></Link>
-                }
-                {
-                  role === "user" && <Link to='dashboard/paymentHistory'><li>Dashboard</li></Link>
-                }
+                )}
+                {role === "seller" && (
+                  <Link to="dashboard/sellerHome">
+                    <li className="hover:bg-[#076cec] rounded-lg">
+                      <button className="font-semibold p-2 text-black hover:text-white">
+                        Dashboard
+                      </button>
+                    </li>
+                  </Link>
+                )}
+                {role === "user" && (
+                  <Link to="dashboard/payment">
+                    <li className="hover:bg-[#076cec] rounded-lg">
+                      <button className="font-semibold  p-2 text-black hover:text-white">
+                        Dashboard
+                      </button>
+                    </li>
+                  </Link>
+                )}
                 <li>
                   <button
                     onClick={handleLogOut}

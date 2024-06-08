@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import img from '../assets/white-logo.png';
-import { FaCoins, FaUserAlt } from "react-icons/fa";
+import { FaCoins, FaHome, FaUserAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
 // import useRole from "../Hooks/useRole";
@@ -12,7 +12,7 @@ import { AiFillMedicineBox } from "react-icons/ai";
 const Dashboard = () => {
     // const [ role, isLoading ] = useRole();
     const isLoading = false;
-    const role = 'seller'
+    const role = 'user'
     console.log(role)
     if (isLoading) {
       return (
@@ -52,7 +52,7 @@ const Dashboard = () => {
                       Sales Report
                     </NavLink>
                   </li>
-                  <li>
+                  <li className="mb-2">
                     <NavLink to="/dashboard/manageAdvertise">
                       <RiAdvertisementLine /> Manage banner advertise
                     </NavLink>
@@ -73,7 +73,7 @@ const Dashboard = () => {
                       Payment history
                     </NavLink>
                   </li>
-                  <li>
+                  <li className="mb-2">
                     <NavLink to="/dashboard/requestAdvertise">
                       <RiAdvertisementLine /> Manage banner advertise
                     </NavLink>
@@ -82,7 +82,7 @@ const Dashboard = () => {
               )}
               {role === "user" && (
                 <>
-                  <li>
+                  <li className="mb-2">
                     <NavLink to="/dashboard/payment">
                       <MdPayment />
                       Payment history
@@ -90,6 +90,12 @@ const Dashboard = () => {
                   </li>
                 </>
               )}
+              <hr />
+              <li>
+                <NavLink to="/">
+                  <FaHome /> Home
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
