@@ -53,7 +53,7 @@ const Invoice = () => {
       const imgHeigth = canvas.width;
       const ratio = Math.min(pdfWidth/imgWidth,pdfHeight/imgHeigth);
       const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 30;
+      const imgY = 25;
       pdf.addImage(imageData,'PNG',imgX,imgY,imgWidth * ratio,imgHeigth * ratio);
       pdf.save('invoice.pdf')
 
@@ -131,7 +131,7 @@ const Invoice = () => {
                 className="btn text-base text-white bg-[#076cec] hover:bg-[#0072CE]"
                 onClick={downloadPDF}
               >
-                Download PDF
+                Print
               </button>
             </div>
             <div className="flex justify-center mr-4 mt-7 mb-9">
