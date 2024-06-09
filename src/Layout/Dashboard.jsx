@@ -12,7 +12,7 @@ import { AiFillMedicineBox } from "react-icons/ai";
 const Dashboard = () => {
     // const [ role, isLoading ] = useRole();
     const isLoading = false;
-    const role = 'user'
+    const role = 'seller'
     console.log(role)
     if (isLoading) {
       return (
@@ -25,7 +25,7 @@ const Dashboard = () => {
       <div className="flex ">
         <div className="w-64 min-h-screen bg-[#076cec] pt-12">
           <div>
-            <img className="ml-2" width={240} src={img} alt="logo" />
+            <img className="ml-2 w-[120px] lg:w-[240px]"  src={img} alt="logo" />
             <ul className="menu space-y-1 mt-3 text-base font-medium">
               {role === "admin" && (
                 <>
@@ -99,7 +99,7 @@ const Dashboard = () => {
             </ul>
           </div>
         </div>
-        <div className="flex-1 p-8">
+        <div className="flex-1 p-4 lg:p-8">
           <Outlet />
         </div>
       </div>
