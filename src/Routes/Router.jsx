@@ -17,6 +17,7 @@ import ManageMedicines from "../Pages/Dashboard/Seller/ManageMedicines";
 import SellerPaymentHistory from "../Pages/Dashboard/Seller/SellerPaymentHistory";
 import UserPayment from "../Pages/Dashboard/User/UserPayment";
 import AskForAdvertisement from "../Pages/Dashboard/Seller/AskForAdvertisement";
+import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 
 export const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ export const router = createBrowserRouter([
         path: "adminHome",
         element: <AdminHome></AdminHome>,
       },
+      {
+        path: "manageAdvertise",
+        element: <ManageAdvertisement/>
+      },
       // seller route
       {
         path: "manageMedicine",
@@ -103,13 +108,13 @@ export const router = createBrowserRouter([
         element: <SellerPaymentHistory />,
       },
       {
-        path: 'requestAdvertise',
-        element : <AskForAdvertisement/>
+        path: "requestAdvertise",
+        element: <AskForAdvertisement />,
       },
       // user route
       {
         path: "payment",
-        element: <UserPayment/>
+        element: <UserPayment />,
       },
     ],
   },

@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
-import useAuth from "../../../Hooks/useAuth";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { ClipLoader } from "react-spinners";
-import AddAdvertisementModal from "./AddAdvertisementModal";
 import useAdvertisement from "../../../Hooks/useAdvertisement";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
-const AskForAdvertisement = () => {
-  const axiosSecure = useAxiosSecure();
-  const [, refetch] = useAdvertisement();
-  const { user } = useAuth();
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+const ManageAdvertisement = () => {
+  const [advertisements, refetch, isLoading] = useAdvertisement();
+    const axiosSecure = useAxiosSecure();
 
-  useEffect(() => {
-    const getData = () => {
-      setLoading(true);
-      axiosSecure.get(`/advertisements/${user.email}`).then((res) => {
-        // console.log(res.data);
-        setData(res.data);
-        refetch();
-        setLoading(false);
-      });
-    };
-    getData();
-  }, [axiosSecure,user.email,refetch]);
+  const handleToggle = async (status, id) => {
+    console.log(status, id)
+     let newStatus;
+     if (status === "approved") {
+       newStatus = "hidden";
+     } else if (status === "hidden") {
+       newStatus = "approved";
+     }
+    await axiosSecure.patch(`/advertisement/${id}`, { status: newStatus });
+            refetch(); 
+  };
 
-  console.log(data);
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <ClipLoader color="#076cec" size={50} />
@@ -37,31 +29,22 @@ const AskForAdvertisement = () => {
     <div>
       <div className="mt-8">
         <h2 className="text-3xl font-bold mb-6 text-center underline">
-          Ask For Advertisement
+          Manage Advertisements
         </h2>
       </div>
-      <div className="flex items-center justify-between mt-10">
-        <h2 className="text-2xl font-bold">
-          Total referred medicine: {data.length}
-        </h2>
-        <button
-          className="btn mr-2 text-white bg-[#076cec] hover:bg-[#0072CE] "
-          onClick={() => document.getElementById("my_modal_2").showModal()}
-        >
-          Add
-        </button>
-      </div>
-      <AddAdvertisementModal />
       <div className="overflow-x-auto border rounded mt-8">
         <table className="table font-medium">
           <thead className="bg-[#076cec] text-white text-lg">
             <tr>
               <th>#</th>
               <th>Product name</th>
+              <th>Description</th>
               <th>Status</th>
+              <th>Add</th>
+              <th>Remove</th>
             </tr>
           </thead>
-          {data.map((item, idx) => (
+          {advertisements.map((item, idx) => (
             <tbody key={item._id}>
               <tr className="text-base" key={item._id}>
                 <td className="font-bold">{idx + 1}</td>
@@ -77,19 +60,29 @@ const AskForAdvertisement = () => {
                     </div>
                   </div>
                 </td>
-                <td className={`inline-flex items-center font-bold`}>
+                <td>{item.description}</td>
+                <td className={`inline-flex items-center justify-center font-bold`}>
                   <p
                     className={`font-medium rounded-lg ${
                       item?.status === "Approved" &&
                       "bg-emerald-100/60 p-2 text-emerald-500"
                     } ${
-                      item?.status === "Pending" &&
+                      item?.status === "Hidden" &&
                       "text-yellow-500 p-2 font-bold bg-yellow-100/60"
-                    } `}
+                    }  `}
                   >
                     {item?.status}
                   </p>
                 </td>
+                <td>
+                  <input
+                    checked={item.status === "Approved"}
+                    onChange={() => handleToggle(item.status, item._id)}
+                    type="checkbox"
+                    className="toggle"
+                  />
+                </td>
+                <td></td>
               </tr>
             </tbody>
           ))}
@@ -99,4 +92,4 @@ const AskForAdvertisement = () => {
   );
 };
 
-export default AskForAdvertisement;
+export default ManageAdvertisement;

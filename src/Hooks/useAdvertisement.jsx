@@ -4,7 +4,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useAdvertisement = () => {
     const axiosSecure = useAxiosSecure();
 
-    const { data : advertisements = [] } = useQuery({
+    const { data : advertisements = [], refetch,isLoading } = useQuery({
         queryKey : ['advertisements'],
         queryFn : async () =>{
             const res = await axiosSecure.get("/advertisements");
@@ -12,7 +12,7 @@ const useAdvertisement = () => {
         }
     })
 
-    return [advertisements];
+    return [advertisements, refetch, isLoading];
 };
 
 export default useAdvertisement;

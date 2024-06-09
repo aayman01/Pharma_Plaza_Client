@@ -1,9 +1,11 @@
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import toast, { Toaster } from "react-hot-toast";
 
 const AddAdvertisementModal = () => {
     const axiosSecure = useAxiosSecure();
     const {user} = useAuth();
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -15,11 +17,16 @@ const AddAdvertisementModal = () => {
           medicineImage: image,
           description: description,
           sellerEmail: user?.email,
-          status : 'Pending',
+          status : 'hidden',
         };
         axiosSecure.post('/advertisement',data)
         .then(res => {
             console.log(res.data)
+            if(res.data.insertedId){
+                e.target.reset();
+                toast.success("Successfully Added!");
+            
+            }
         })
         
     }
@@ -32,24 +39,24 @@ const AddAdvertisementModal = () => {
         <form onSubmit={handleSubmit} className="card-body">
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium">Medicine Name*</span>
+              <span className="label-text font-medium">Product Name*</span>
             </label>
             <input
               type="text"
               name="name"
-              placeholder="Medicine Name"
+              placeholder="Product Name"
               className="input input-bordered"
               required
             />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-medium">Medicine Image*</span>
+              <span className="label-text font-medium">Product Image*</span>
             </label>
             <input
               type="text"
               name="image"
-              placeholder="Medicine Image URL"
+              placeholder="Product Image URL"
               className="input input-bordered"
               required
             />
@@ -69,6 +76,7 @@ const AddAdvertisementModal = () => {
             <button className="btn btn-primary text-white">Add</button>
           </div>
         </form>
+        <Toaster position="top-right" reverseOrder={false} />
       </div>
 
       <form method="dialog" className="modal-backdrop">
