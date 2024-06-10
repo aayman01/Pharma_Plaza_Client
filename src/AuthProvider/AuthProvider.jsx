@@ -61,7 +61,6 @@ const AuthProvider = ({ children }) => {
           }
         });
       } else {
-        // token remove local storage
         localStorage.removeItem("access-token");
         setLoading(false);
       }

@@ -10,9 +10,11 @@ import { ClipLoader } from "react-spinners";
 import { AiFillMedicineBox } from "react-icons/ai";
 
 const Dashboard = () => {
-    const [ role, isLoading] = useRole();
+    const [ role, isPending] = useRole();
     // console.log(role)
-    if (isLoading) {
+    // const isPending = false;
+    // const role = 'admin'
+    if (isPending) {
       return (
         <div className="min-h-screen flex items-center justify-center">
           <ClipLoader color="#076cec" size={50} />
@@ -65,6 +67,12 @@ const Dashboard = () => {
               )}
               {role === "Seller" && (
                 <>
+                  <li>
+                    <NavLink to="/dashboard/sellerHome">
+                      <AiFillMedicineBox />
+                      Seller Home
+                    </NavLink>
+                  </li>
                   <li>
                     <NavLink to="/dashboard/manageMedicine">
                       <AiFillMedicineBox />

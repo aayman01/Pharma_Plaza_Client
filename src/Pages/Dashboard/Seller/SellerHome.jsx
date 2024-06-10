@@ -1,51 +1,43 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
-import {  FaSackDollar } from "react-icons/fa6";
-import { MdOutlinePendingActions, MdPaid } from "react-icons/md";
+import useAuth from "../../../Hooks/useAuth";
+import { FaSackDollar } from "react-icons/fa6";
+import { MdOutlinePendingActions } from "react-icons/md";
 
-
-
-const AdminHome = () => {
-    const axiosSecure = useAxiosSecure()
+const SellerHome = () => {
+    const axiosSecure = useAxiosSecure();
+    const {user} = useAuth();
     const { data = [] } = useQuery({
       queryKey: ["query-stats"],
       queryFn: async () => {
-        const res = await axiosSecure.get("/admin-stats");
+        const res = await axiosSecure.get(`/seller-stats?email=${user?.email}`);
         console.log(res.data);
         return res.data;
       },
     });
     console.log(data)
-    return (
+  return (
+    <div className="flex items-center justify-center">
       <div className="text-4xl">
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
-            Admin Homepage
+            Seller Homepage
           </h2>
         </div>
         <div>
-          <div className="stats mt-4">
+          <div className="stats w-full mt-4">
             <div className="stat space-y-3 bg-green-400">
               <div className="stat-figure text-secondary">
                 <FaSackDollar className="w-11 h-11" />
               </div>
-              <div className="stat-title font-bold text-white">
-                Total Revenue
-              </div>
-              <div className="stat-value">${data?.revenue}</div>
+              <div className="stat-title font-bold text-white">Paid Total</div>
+              <div className="stat-value">${data.amountTotals?.Paid}</div>
               {/* <div className="stat-desc">Jan 1st - Feb 1st</div> */}
             </div>
 
-            <div className="stat space-y-3 bg-blue-500">
-              <div className="stat-figure text-secondary">
-                <MdOutlinePendingActions className="w-11 h-11" />
-              </div>
-              <div className="stat-title text-white font-bold">Paid Total</div>
-              <div className="stat-value">${data.amountTotals?.Paid}</div>
-            </div>
             <div className="stat space-y-3 bg-red-400">
               <div className="stat-figure text-secondary">
-                <MdPaid className="w-11 h-11" />
+                <MdOutlinePendingActions className="w-11 h-11" />
               </div>
               <div className="stat-title text-white font-bold">
                 Pending Total
@@ -55,7 +47,8 @@ const AdminHome = () => {
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
-export default AdminHome;
+export default SellerHome;

@@ -11,20 +11,20 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    
+    reset,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
   const location = useLocation();
   const axiosPublic = useAxiosPublic();
-  console.log(location)
+  // console.log(location)
   
 
   const onSubmit = (data) => {
     console.log(data);
     signIn(data.email, data.password)
       .then(() => {
-        // reset();
+        reset();
         Swal.fire({
           position: "center",
           icon: "success",

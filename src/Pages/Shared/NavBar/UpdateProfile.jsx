@@ -89,11 +89,9 @@ const UpdateProfile = () => {
                 <input
                   type="file"
                   className="file-input file-input-bordered"
-                  {...register("userImg", { required: true })}
+                  {...register("userImg")}
                 />
-                {errors && (
-                  <span className="text-red-500 mt-2">Image is required</span>
-                )}
+                
               </div>
               <div>
                 <label className="form-control w-full mb-4">

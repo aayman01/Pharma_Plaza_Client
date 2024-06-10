@@ -23,6 +23,7 @@ import ManagePayment from "../Pages/Dashboard/Admin/ManagePayment";
 import ManageCategory from "../Pages/Dashboard/Admin/ManageCategory";
 import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
+import SellerHome from "../Pages/Dashboard/Seller/SellerHome";
 
 export const router = createBrowserRouter([
   {
@@ -88,11 +89,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: (
-      <PrivateRoute>
-        <Dashboard />
-      </PrivateRoute>
-    ),
+    element: <Dashboard />,
     children: [
       // admin route
       {
@@ -136,6 +133,14 @@ export const router = createBrowserRouter([
         ),
       },
       // seller route
+      {
+        path: "sellerHome",
+        element: (
+          <SellerRoute>
+            <SellerHome></SellerHome>
+          </SellerRoute>
+        ),
+      },
       {
         path: "manageMedicine",
         element: (
