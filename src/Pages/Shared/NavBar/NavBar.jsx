@@ -126,7 +126,7 @@ const NavBar = () => {
                   </li>
                 </Link>
 
-                {role === "admin" && (
+                {role === "Admin" && (
                   <Link to="dashboard/adminHome">
                     <li className="hover:bg-[#076cec] rounded-lg">
                       <button className="font-semibold  p-2 text-black hover:text-white">
@@ -135,7 +135,7 @@ const NavBar = () => {
                     </li>
                   </Link>
                 )}
-                {role === "seller" && (
+                {role === "Seller" && (
                   <Link to="dashboard/sellerHome">
                     <li className="hover:bg-[#076cec] rounded-lg">
                       <button className="font-semibold p-2 text-black hover:text-white">
@@ -144,7 +144,7 @@ const NavBar = () => {
                     </li>
                   </Link>
                 )}
-                {role === "user" && (
+                {role === "User" && (
                   <Link to="dashboard/payment">
                     <li className="hover:bg-[#076cec] rounded-lg">
                       <button className="font-semibold  p-2 text-black hover:text-white">

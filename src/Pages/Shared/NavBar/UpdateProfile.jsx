@@ -97,8 +97,8 @@ const UpdateProfile = () => {
                   <option disabled value="">
                     Select a role
                   </option>
-                  <option value="user">User</option>
-                  <option value="seller">Seller</option>
+                  <option value="User">User</option>
+                  <option value="Seller">Seller</option>
                 </select>
               </label>
             </div>

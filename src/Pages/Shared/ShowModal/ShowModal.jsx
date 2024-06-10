@@ -3,7 +3,7 @@ import { Fragment } from "react";
 
 const ShowModal = ({ isOpen, onClose, data }) => {
 
-  // console.log(data)
+  // console.log("in modal shop",data)
 
   return (
     <>

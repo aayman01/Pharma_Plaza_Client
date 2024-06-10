@@ -40,8 +40,7 @@ const ManageAdvertisement = () => {
               <th>Product name</th>
               <th>Description</th>
               <th>Status</th>
-              <th>Add</th>
-              <th>Remove</th>
+              <th>Action</th>
             </tr>
           </thead>
           {advertisements.map((item, idx) => (

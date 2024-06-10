@@ -42,7 +42,7 @@ const Login = () => {
         const userInfo = {
           email: result.user?.email,
           name: result.user?.displayName,
-          role: "user",
+          role: "User",
         };
         console.log(userInfo)
         await axiosPublic.post("/users", userInfo).then((res) => {
@@ -67,7 +67,7 @@ const Login = () => {
         const userInfo = {
           name: result.user?.displayName,
           email: result.user?.email,
-          role: "user",
+          role: "User",
         };
         await axiosPublic.post("/users", userInfo).then((res) => {
           if (res.data) {

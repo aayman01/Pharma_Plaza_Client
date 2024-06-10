@@ -83,7 +83,7 @@ const CheckOutForm = () => {
           email: user.email,
           price: totalPrice,
           transactionId: paymentIntent.id,
-          date: moment().format("L"),
+          date: moment().format("MMM Do YYYY"),
           productIds: carts.map((item) => item.productId),
           status: "pending",
         };
