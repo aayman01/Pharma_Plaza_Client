@@ -12,7 +12,7 @@ import { AiFillMedicineBox } from "react-icons/ai";
 const Dashboard = () => {
     // const [ role, isLoading ] = useRole();
     const isLoading = false;
-    const role = 'admin'
+    const role = 'seller'
     console.log(role)
     if (isLoading) {
       return (

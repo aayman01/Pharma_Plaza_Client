@@ -83,7 +83,7 @@ const AskForAdvertisement = () => {
                       item?.status === "Approved" &&
                       "bg-emerald-100/60 p-2 text-emerald-500"
                     } ${
-                      item?.status === "Pending" &&
+                      item?.status === "Hidden" &&
                       "text-yellow-500 p-2 font-bold bg-yellow-100/60"
                     } `}
                   >
