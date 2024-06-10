@@ -6,7 +6,7 @@ import { ClipLoader } from "react-spinners";
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
     const [loading, setLoading] = useState(false)
-    const { refetch, data: users = [] } = useQuery({
+    const { refetch, data: users = [],isLoading } = useQuery({
       queryKey: ["users"],
       queryFn: async () => {
         const res = await axiosSecure.get("/user");
@@ -29,6 +29,13 @@ const ManageUsers = () => {
               setLoading(false)
             }
           });
+    }
+    if (isLoading) {
+      return (
+        <div className="min-h-screen flex items-center justify-center">
+          <ClipLoader color="#076cec" size={50} />
+        </div>
+      );
     }
     return (
       <div>

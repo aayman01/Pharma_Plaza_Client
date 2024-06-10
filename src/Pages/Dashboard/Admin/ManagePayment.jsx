@@ -49,6 +49,7 @@ const ManagePayment = () => {
               </tr>
             </thead>
             {payments.map((item, idx) => (
+              
               <tbody key={item._id}>
                 <tr>
                   <th>{idx + 1}</th>

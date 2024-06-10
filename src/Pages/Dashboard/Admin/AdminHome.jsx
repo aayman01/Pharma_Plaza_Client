@@ -1,9 +1,55 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import {  FaSackDollar } from "react-icons/fa6";
+import { MdOutlinePendingActions, MdPaid } from "react-icons/md";
+
+
 
 const AdminHome = () => {
+    const axiosSecure = useAxiosSecure()
+    const { data = [] } = useQuery({
+      queryKey: ["query-stats"],
+      queryFn: async () => {
+        const res = await axiosSecure.get("/admin-stats");
+        console.log(res.data);
+        return res.data;
+      },
+    });
+    console.log(data)
     return (
+      <div className="text-4xl">
         <div>
-            
+          <div className="stats">
+            <div className="stat space-y-3 bg-green-400">
+              <div className="stat-figure text-secondary">
+                <FaSackDollar className="w-11 h-11" />
+              </div>
+              <div className="stat-title font-bold text-white">
+                Total Revenue
+              </div>
+              <div className="stat-value">${data?.revenue}</div>
+              {/* <div className="stat-desc">Jan 1st - Feb 1st</div> */}
+            </div>
+
+            <div className="stat space-y-3 bg-blue-500">
+              <div className="stat-figure text-secondary">
+                <MdOutlinePendingActions className="w-11 h-11" />
+              </div>
+              <div className="stat-title text-white font-bold">Paid Total</div>
+              <div className="stat-value">${data.amountTotals?.Paid}</div>
+            </div>
+            <div className="stat space-y-3 bg-red-400">
+              <div className="stat-figure text-secondary">
+                <MdPaid className="w-11 h-11" />
+              </div>
+              <div className="stat-title text-white font-bold">
+                Pending Total
+              </div>
+              <div className="stat-value">${data.amountTotals?.pending}</div>
+            </div>
+          </div>
         </div>
+      </div>
     );
 };
 
