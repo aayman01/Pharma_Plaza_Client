@@ -11,9 +11,6 @@ import { AiFillMedicineBox } from "react-icons/ai";
 
 const Dashboard = () => {
     const [ role, isPending] = useRole();
-    // console.log(role)
-    // const isPending = false;
-    // const role = 'admin'
     if (isPending) {
       return (
         <div className="min-h-screen flex items-center justify-center">

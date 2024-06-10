@@ -43,7 +43,7 @@ const UserPayment = () => {
           <div className="overflow-x-auto border rounded mt-16">
             <table className="table font-medium">
               <thead className="bg-[#076cec] text-white">
-                <tr>
+                <tr className="text-base">
                   <th>#</th>
                   <th>Name</th>
                   <th>Transaction Id</th>
