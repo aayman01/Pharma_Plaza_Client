@@ -3,17 +3,15 @@ import img from '../assets/white-logo.png';
 import { FaCoins, FaHome, FaUserAlt } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { HiOutlineDocumentReport } from "react-icons/hi";
-// import useRole from "../Hooks/useRole";
+import useRole from "../Hooks/useRole";
 import { RiAdvertisementLine } from "react-icons/ri";
 import { MdPayment } from "react-icons/md";
 import { ClipLoader } from "react-spinners";
 import { AiFillMedicineBox } from "react-icons/ai";
 
 const Dashboard = () => {
-    // const [ role, isLoading ] = useRole();
-    const isLoading = false;
-    const role = 'Admin'
-    console.log(role)
+    const [ role, isLoading] = useRole();
+    // console.log(role)
     if (isLoading) {
       return (
         <div className="min-h-screen flex items-center justify-center">

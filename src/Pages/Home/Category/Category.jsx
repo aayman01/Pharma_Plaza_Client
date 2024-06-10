@@ -3,7 +3,6 @@ import CategoryCard from "./CategoryCard";
 import img1 from '../../../assets/Prescription.png'; 
 import img2 from '../../../assets/vitamins.png'; 
 import img3 from '../../../assets/toiletries.png'; 
-import img4 from '../../../assets/first-aid-kit.png'; 
 import img5 from '../../../assets/herbal.png'; 
 import img6 from '../../../assets/baby-boy.png'; 
 import img7 from '../../../assets/blood-pressure.png'; 
@@ -22,9 +21,7 @@ const Category = () => {
   const personCare = products.filter(
     (item) => item.categoryName === "Personal Care"
   );
-  const firstAid = products.filter(
-    (item) => item.categoryName === "First Aid"
-  );
+  
   const herbalProducts = products.filter(
     (item) => item.categoryName === "Herbal Products"
   );
@@ -47,7 +44,7 @@ const Category = () => {
         heading="Our Popular Categories"
         subHeading="Find the best quality products here"
       ></SectionTitle>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-2">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mb-2">
         <CategoryCard
           categoryImage={img1}
           categoryName="Prescription Medications"
@@ -62,11 +59,6 @@ const Category = () => {
           categoryImage={img3}
           categoryName="Personal Care"
           number={personCare?.length}
-        ></CategoryCard>
-        <CategoryCard
-          categoryImage={img4}
-          categoryName="First Aid"
-          number={firstAid?.length}
         ></CategoryCard>
         <CategoryCard
           categoryImage={img5}

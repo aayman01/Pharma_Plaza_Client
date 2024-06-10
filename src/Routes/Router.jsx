@@ -21,6 +21,8 @@ import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 import ManagePayment from "../Pages/Dashboard/Admin/ManagePayment";
 import ManageCategory from "../Pages/Dashboard/Admin/ManageCategory";
+import AdminRoute from "./AdminRoute";
+import SellerRoute from "./SellerRoute";
 
 export const router = createBrowserRouter([
   {
@@ -95,41 +97,77 @@ export const router = createBrowserRouter([
       // admin route
       {
         path: "adminHome",
-        element: <AdminHome></AdminHome>,
+        element: (
+          <AdminRoute>
+            <AdminHome></AdminHome>
+          </AdminRoute>
+        ),
       },
       {
         path: "manageAdvertise",
-        element: <ManageAdvertisement />,
+        element: (
+          <AdminRoute>
+            <ManageAdvertisement />
+          </AdminRoute>
+        ),
       },
       {
         path: "manageUser",
-        element: <ManageUsers />,
+        element: (
+          <AdminRoute>
+            <ManageUsers />
+          </AdminRoute>
+        ),
       },
       {
         path: "managePayment",
-        element: <ManagePayment />,
+        element: (
+          <AdminRoute>
+            <ManagePayment />
+          </AdminRoute>
+        ),
       },
       {
         path: "manageCategory",
-        element: <ManageCategory/>
+        element: (
+          <AdminRoute>
+            <ManageCategory />
+          </AdminRoute>
+        ),
       },
       // seller route
       {
         path: "manageMedicine",
-        element: <ManageMedicines />,
+        element: (
+          <SellerRoute>
+            <ManageMedicines />
+          </SellerRoute>
+        ),
       },
       {
         path: "paymentHistory",
-        element: <SellerPaymentHistory />,
+        element: (
+          <SellerRoute>
+            <SellerPaymentHistory />
+          </SellerRoute>
+        ),
       },
       {
         path: "requestAdvertise",
-        element: <AskForAdvertisement />,
+        element: (
+          <SellerRoute>
+            <AskForAdvertisement />
+          </SellerRoute>
+        ),
       },
       // user route
       {
         path: "payment",
-        element: <UserPayment />,
+        element: (
+          <PrivateRoute>
+            <UserPayment />
+          </PrivateRoute>
+        ),
       },
     ],
   },

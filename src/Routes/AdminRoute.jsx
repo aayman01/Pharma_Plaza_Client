@@ -4,7 +4,7 @@ import useRole from "../Hooks/useRole";
 import { ClipLoader } from "react-spinners";
 
 const AdminRoute = ({ children }) => {
-  const { user, loading } = useAuth();
+  const {  loading } = useAuth();
   const [role] = useRole();
   const location = useLocation();
 
@@ -16,7 +16,7 @@ const AdminRoute = ({ children }) => {
     );
   }
 
-  if (user && role === 'Admin') {
+  if ( role === 'Admin') {
     return children;
   }
   return <Navigate to="/login" state={{ from: location }} replace></Navigate>;

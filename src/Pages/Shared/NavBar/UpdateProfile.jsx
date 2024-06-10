@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../Hooks/useAuth";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import NavBar from "./NavBar";
 
 
 
@@ -13,6 +14,7 @@ const UpdateProfile = () => {
     const {
       register,
       handleSubmit,
+      formState: { errors },
     } = useForm();
 
     const onSubmit = async (data) => {
@@ -51,65 +53,75 @@ const UpdateProfile = () => {
       
     };
     return (
-      <div className="max-w-6xl mx-auto px-4">
-        <div>
-          <h2 className="text-3xl font-bold text-center my-10">
-            Update Profile
-          </h2>
-        </div>
-        <div className="flex items-center justify-center mb-10">
-          <img className="w-56 h-56 rounded-full" src={user?.photoURL} alt="" />
-        </div>
-        <div>
-          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="input input-bordered"
-                defaultValue={user.displayName}
-                {...register("name")}
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium">Your image</span>
-              </label>
-              <input
-                type="file"
-                className="file-input file-input-bordered"
-                {...register("userImg")}
-              />
-            </div>
-            <div>
-              <label className="form-control w-full mb-4">
-                <div className="label">
-                  <span className="label-text font-medium">Role</span>
-                </div>
-                <select
-                  defaultValue=""
-                  {...register("role")}
-                  className="select select-bordered w-full"
-                >
-                  <option disabled value="">
-                    Select a role
-                  </option>
-                  <option value="User">User</option>
-                  <option value="Seller">Seller</option>
-                </select>
-              </label>
-            </div>
-            <div className="form-control mt-6">
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="Update User"
-              />
-            </div>
-          </form>
+      <div>
+        <NavBar />
+        <div className="max-w-6xl mx-auto px-4">
+          <div>
+            <h2 className="text-3xl font-bold text-center my-10 underline">
+              Update Profile
+            </h2>
+          </div>
+          <div className="flex items-center justify-center mb-10">
+            <img
+              className="w-56 h-56 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          </div>
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="input input-bordered"
+                  defaultValue={user.displayName}
+                  {...register("name")}
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-medium">Your image</span>
+                </label>
+                <input
+                  type="file"
+                  className="file-input file-input-bordered"
+                  {...register("userImg", { required: true })}
+                />
+                {errors && (
+                  <span className="text-red-500 mt-2">Image is required</span>
+                )}
+              </div>
+              <div>
+                <label className="form-control w-full mb-4">
+                  <div className="label">
+                    <span className="label-text font-medium">Role</span>
+                  </div>
+                  <select
+                    defaultValue=""
+                    {...register("role")}
+                    className="select select-bordered w-full"
+                  >
+                    <option disabled value="">
+                      Select a role
+                    </option>
+                    <option value="User">User</option>
+                    <option value="Seller">Seller</option>
+                  </select>
+                </label>
+              </div>
+              <div className="form-control mt-6">
+                <input
+                  className="btn btn-primary"
+                  type="submit"
+                  value="Update User"
+                />
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     );
