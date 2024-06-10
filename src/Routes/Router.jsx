@@ -19,6 +19,7 @@ import UserPayment from "../Pages/Dashboard/User/UserPayment";
 import AskForAdvertisement from "../Pages/Dashboard/Seller/AskForAdvertisement";
 import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
+import ManagePayment from "../Pages/Dashboard/Admin/ManagePayment";
 
 export const router = createBrowserRouter([
   {
@@ -102,6 +103,10 @@ export const router = createBrowserRouter([
       {
         path: "manageUser",
         element: <ManageUsers />,
+      },
+      {
+        path: "managePayment",
+        element: <ManagePayment />,
       },
       // seller route
       {

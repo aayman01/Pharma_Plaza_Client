@@ -83,9 +83,8 @@ const CheckOutForm = () => {
           email: user.email,
           price: totalPrice,
           transactionId: paymentIntent.id,
-          date: new Date(),
+          date: moment().format("L"),
           productIds: carts.map((item) => item.productId),
-          sellerEmail : carts.map(item => item.sellerEmail),
           status: "pending",
         };
 

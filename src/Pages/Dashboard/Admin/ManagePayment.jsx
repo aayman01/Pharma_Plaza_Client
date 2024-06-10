@@ -1,27 +1,29 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../Hooks/useAuth";
 import { ClipLoader } from "react-spinners";
 
-const UserPayment = () => {
+const ManagePayment = () => {
     const axiosSecure = useAxiosSecure();
     const {user} = useAuth();
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-      const getData = () => {
-        setLoading(true);
-        axiosSecure.get(`/payment/${user.email}`).then((res) => {
-          // console.log(res.data);
-          setData(res.data);
-          setLoading(false);
-        });
-      };
-      getData();
-    }, [axiosSecure,user.email]);
-    // console.log(data)
-    if (loading) {
+    const { refetch, data: payments = [], isLoading } = useQuery({
+      queryKey: ["payments"],
+      queryFn: async () => {
+        const res = await axiosSecure.get("/payment");
+        return res.data;
+      },
+    });
+    const handlePayment = (id) => {
+        axiosSecure
+          .patch(`/payment/admin/${id}`, { status: "Paid" })
+          .then((res) => {
+            if(res.data.modifiedCount > 0){
+                refetch();
+            }
+          });
+    }
+    if (isLoading) {
       return (
         <div className="min-h-screen flex items-center justify-center">
           <ClipLoader color="#076cec" size={50} />
@@ -32,7 +34,7 @@ const UserPayment = () => {
       <div>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
-            Payment History
+            Payment Management
           </h2>
         </div>
         <div className="overflow-x-auto border rounded mt-16">
@@ -44,9 +46,10 @@ const UserPayment = () => {
                 <th>Transaction Id</th>
                 <th>Date</th>
                 <th>Status</th>
+                <td>Action</td>
               </tr>
             </thead>
-            {data.map((item, idx) => (
+            {payments.map((item, idx) => (
               <tbody key={item._id}>
                 <tr>
                   <th>{idx + 1}</th>
@@ -68,6 +71,11 @@ const UserPayment = () => {
                       {item.status}
                     </p>
                   </td>
+                  <td>
+                    <button onClick={() => handlePayment(item._id)} className="text-white btn btn-success">
+                      Accept Payment
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             ))}
@@ -77,4 +85,4 @@ const UserPayment = () => {
     );
 };
 
-export default UserPayment;
+export default ManagePayment;

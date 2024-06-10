@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useState } from "react";
+import { ClipLoader } from "react-spinners";
 
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
+    const [loading, setLoading] = useState(false)
     const { refetch, data: users = [] } = useQuery({
       queryKey: ["users"],
       queryFn: async () => {
@@ -20,8 +23,10 @@ const ManageUsers = () => {
         axiosSecure
           .patch(`/users/admin/${id}`, { role })
           .then(res => {
+            setLoading(true)
             if (res.data.modifiedCount > 0) {
               refetch();
+              setLoading(false)
             }
           });
     }
@@ -49,7 +54,13 @@ const ManageUsers = () => {
                   <th>{idx + 1}</th>
                   <td>{item.name}</td>
                   <td>{item.email}</td>
-                  <td>{item.role}</td>
+                  <td>
+                    {loading ? (
+                      <ClipLoader color="#076cec" size={18} />
+                    ) : (
+                      item.role
+                    )}
+                  </td>
                   <td>
                     <select
                       defaultValue={item.role}
