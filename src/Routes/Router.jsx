@@ -18,6 +18,7 @@ import SellerPaymentHistory from "../Pages/Dashboard/Seller/SellerPaymentHistory
 import UserPayment from "../Pages/Dashboard/User/UserPayment";
 import AskForAdvertisement from "../Pages/Dashboard/Seller/AskForAdvertisement";
 import ManageAdvertisement from "../Pages/Dashboard/Admin/ManageAdvertisement";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 
 export const router = createBrowserRouter([
   {
@@ -96,7 +97,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "manageAdvertise",
-        element: <ManageAdvertisement/>
+        element: <ManageAdvertisement />,
+      },
+      {
+        path: "manageUser",
+        element: <ManageUsers />,
       },
       // seller route
       {
