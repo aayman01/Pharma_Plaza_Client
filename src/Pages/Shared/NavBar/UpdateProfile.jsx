@@ -3,6 +3,7 @@ import useAuth from "../../../Hooks/useAuth";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import NavBar from "./NavBar";
+import { useState } from "react";
 
 
 
@@ -10,11 +11,11 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const UpdateProfile = () => {
     const { user, updateUserProfile } = useAuth();
+    const [loading, setLoading] = useState(false);
     const axiosPublic = useAxiosPublic();
     const {
       register,
       handleSubmit,
-      formState: { errors },
     } = useForm();
 
     const onSubmit = async (data) => {
@@ -24,6 +25,7 @@ const UpdateProfile = () => {
       headers: { "Content-Type": "multipart/form-data" },
     });
     if(res.data.success){
+       setLoading(true)
         const image = res?.data?.data?.display_url;
         
         updateUserProfile(data.name, image)
@@ -36,6 +38,7 @@ const UpdateProfile = () => {
             .then(res => {
                 console.log(res.data)
                 if (res.data.modifiedCount > 0) {
+                  setLoading(false)
                   Swal.fire({
                     position: "center",
                     icon: "success",
@@ -91,7 +94,6 @@ const UpdateProfile = () => {
                   className="file-input file-input-bordered"
                   {...register("userImg")}
                 />
-                
               </div>
               <div>
                 <label className="form-control w-full mb-4">
@@ -112,11 +114,17 @@ const UpdateProfile = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <input
-                  className="btn btn-primary"
-                  type="submit"
-                  value="Update User"
-                />
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    <span className="loading loading-spinner loading-xs"></span>
+                  </div>
+                ) : (
+                  <input
+                    className="btn btn-primary"
+                    type="submit"
+                    value="Update User"
+                  />
+                )}
               </div>
             </form>
           </div>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import NavBar from "../Shared/NavBar/NavBar";
 import Footer from "../Shared/Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const Shop = () => {
   const [searchText, setSearchText] = useState('');
@@ -56,7 +57,10 @@ const Shop = () => {
   
   return (
     <>
-    <NavBar/>
+      <Helmet>
+        <title>PharmaPlaza | Shop</title>
+      </Helmet>
+      <NavBar />
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mt-8">
           <h2 className="text-4xl font-bold mb-2">All Products</h2>
@@ -159,7 +163,7 @@ const Shop = () => {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

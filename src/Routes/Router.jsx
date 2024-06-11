@@ -24,6 +24,7 @@ import ManageCategory from "../Pages/Dashboard/Admin/ManageCategory";
 import AdminRoute from "./AdminRoute";
 import SellerRoute from "./SellerRoute";
 import SellerHome from "../Pages/Dashboard/Seller/SellerHome";
+import SellReportPage from "../Pages/Dashboard/Admin/SellReportPage";
 
 export const router = createBrowserRouter([
   {
@@ -123,6 +124,12 @@ export const router = createBrowserRouter([
             <ManagePayment />
           </AdminRoute>
         ),
+      },
+      {
+        path: "sellsReport",
+        element: <AdminRoute>
+          <SellReportPage/>
+        </AdminRoute>
       },
       {
         path: "manageCategory",

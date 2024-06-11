@@ -61,7 +61,7 @@ const Invoice = () => {
   };
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <ClipLoader color="#076cec" size={50} />
       </div>
     );
@@ -121,7 +121,7 @@ const Invoice = () => {
                     <th className="text-lg text-black text-end">
                       Total Price:
                     </th>
-                    <th className="text-lg text-black ">{totalPrice}$</th>
+                    <th className="text-lg text-black ">{totalPrice?.toFixed(2)}$</th>
                   </tr>
                 </tfoot>
               </table>

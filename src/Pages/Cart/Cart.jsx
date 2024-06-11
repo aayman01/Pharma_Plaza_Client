@@ -11,6 +11,7 @@ import useAuth from "../../Hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 // import { Link } from "react-router-dom";
 
 
@@ -125,6 +126,9 @@ const Cart = () => {
  
   return (
     <>
+      <Helmet>
+        <title>PharmaPlaza | Cart</title>
+      </Helmet>
       <NavBar />
       {cartItems.length === 0 ? (
         <div className="h-screen-minus-20px flex items-center justify-center">

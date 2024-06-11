@@ -17,7 +17,7 @@ const CheckOutForm = () => {
   const [error, setError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
-
+  
   const totalPrice = carts.reduce(
     (total, item) => total + item.pricePerUnit,
     0
