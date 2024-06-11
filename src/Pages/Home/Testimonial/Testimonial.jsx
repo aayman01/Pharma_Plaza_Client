@@ -35,13 +35,13 @@ const Testimonial = () => {
                 <div className="container max-w-xl mx-auto">
                   <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 bg-[#dbf4fc] mb-7">
                     <img
-                      src={review.image}
+                      src={review?.image}
                       alt=""
                       className="w-28 h-28 rounded-full"
                     />
                     <div className="text-center">
-                      <p className="text-xl font-bold">{review.name}</p>
-                      <p className="font-normal">{review.description}</p>
+                      <p className="text-xl font-bold">{review?.name}</p>
+                      <p className="font-normal">{review?.description}</p>
                     </div>
                   </div>
                 </div>

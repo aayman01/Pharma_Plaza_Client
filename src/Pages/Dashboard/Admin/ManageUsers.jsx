@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useState } from "react";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 const ManageUsers = () => {
     const axiosSecure = useAxiosSecure();
@@ -39,6 +40,9 @@ const ManageUsers = () => {
     }
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Manage Users</title>
+        </Helmet>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
             Manage Users

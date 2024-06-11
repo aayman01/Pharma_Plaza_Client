@@ -2,6 +2,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { ClipLoader } from "react-spinners";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 
 const SellerPaymentHistory = () => {
     const axiosSecure = useAxiosSecure();
@@ -25,6 +26,9 @@ const SellerPaymentHistory = () => {
     console.log(data)
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Seller payment</title>
+        </Helmet>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
             Payment History

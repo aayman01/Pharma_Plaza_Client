@@ -2,6 +2,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../Hooks/useAuth";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 const ManagePayment = () => {
     const axiosSecure = useAxiosSecure();
@@ -31,6 +32,9 @@ const ManagePayment = () => {
     }
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Manage Payment</title>
+        </Helmet>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
             Payment Management
@@ -49,7 +53,6 @@ const ManagePayment = () => {
               </tr>
             </thead>
             {payments.map((item, idx) => (
-              
               <tbody key={item._id}>
                 <tr>
                   <th>{idx + 1}</th>
@@ -72,7 +75,10 @@ const ManagePayment = () => {
                     </p>
                   </td>
                   <td>
-                    <button onClick={() => handlePayment(item._id)} className="text-white btn btn-success">
+                    <button
+                      onClick={() => handlePayment(item._id)}
+                      className="text-white btn btn-success"
+                    >
                       Accept Payment
                     </button>
                   </td>

@@ -3,11 +3,15 @@ import Footer from "../Shared/Footer/Footer";
 import NavBar from "../Shared/NavBar/NavBar";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckOutForm from "./CheckOutForm";
+import { Helmet } from "react-helmet-async";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_GATEWAY);
 const Payment = () => {
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Payment</title>
+        </Helmet>
         <NavBar />
         <div className="max-w-6xl mx-auto px-4">
           <div>

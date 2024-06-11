@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useAllProducts from "../../../Hooks/useAllProducts";
 import useAuth from "../../../Hooks/useAuth";
 import AddProductModal from "./AddProductModal";
@@ -9,6 +10,9 @@ const ManageMedicines = () => {
     console.log(seller)
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Manage Medicines</title>
+        </Helmet>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
             Manage Medicine

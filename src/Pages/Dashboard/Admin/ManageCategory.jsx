@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import AddCategoryModal from "./AddCategoryModal";
 import useCategory from "../../../Hooks/useCategory";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 const ManageCategory = () => {
   const [modalData, setModalData] = useState({});
@@ -56,6 +57,9 @@ const ManageCategory = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>PharmaPlaza | Manage Category</title>
+      </Helmet>
       <div className="mt-8">
         <h2 className="text-3xl font-bold mb-6 text-center underline">
           Manage Category

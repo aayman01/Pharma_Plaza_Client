@@ -4,6 +4,7 @@ import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import NavBar from "./NavBar";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -57,6 +58,9 @@ const UpdateProfile = () => {
     };
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Update Profile</title>
+        </Helmet>
         <NavBar />
         <div className="max-w-6xl mx-auto px-4">
           <div>

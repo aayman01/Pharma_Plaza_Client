@@ -2,9 +2,12 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { DateRangePicker } from "react-date-range";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { formatDate } from "date-fns";
+import { Helmet } from "react-helmet-async";
+import html2canvas from "html2canvas-pro";
+import { jsPDF } from "jspdf";
 
 const SellReportPage = () => {
   const axiosSecure = useAxiosSecure();
@@ -13,7 +16,9 @@ const SellReportPage = () => {
   const [endDate, setEndDate] = useState(new Date());
   const [products, setProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const pdfRef = useRef();
+
 
   useEffect(()=>{
     setIsLoading(true)
@@ -47,6 +52,30 @@ const SellReportPage = () => {
     setOpenData(!openData);
   };
 
+  const downloadPDF = () => {
+    const input = pdfRef.current;
+    html2canvas(input).then((canvas) => {
+      const imageData = canvas.toDataURL("/image/png");
+      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeigth = canvas.width;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeigth);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 35;
+      pdf.addImage(
+        imageData,
+        "PNG",
+        imgX,
+        imgY,
+        imgWidth * ratio,
+        imgHeigth * ratio
+      );
+      pdf.save("Salesreport.pdf");
+    });
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -56,12 +85,15 @@ const SellReportPage = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>PharmaPlaza | Sales report</title>
+      </Helmet>
       <div>
         <h2 className="text-3xl font-bold text-center underline">
           Sells Report
         </h2>
       </div>
-      <div className="container flex items-center justify-end mt-8 mb-4">
+      <div className="containers flex items-center justify-end mt-8 mb-4">
         <span
           onClick={handleClick}
           className="btn text-white bg-[#076cec] hover:bg-[#0072CE] "
@@ -83,7 +115,7 @@ const SellReportPage = () => {
           </h2>
         </div>
       ) : (
-        <div className="overflow-x-auto border rounded">
+        <div ref={pdfRef} className="overflow-x-auto border rounded">
           <table className="table font-medium">
             <thead className="bg-[#076cec] text-white">
               <tr className="text-base">
@@ -112,6 +144,14 @@ const SellReportPage = () => {
           </table>
         </div>
       )}
+      <div className="flex justify-end items-center mt-3">
+        <button
+          onClick={downloadPDF}
+          className="btn text-white bg-[#076cec] hover:bg-[#0072CE] "
+        >
+          Print
+        </button>
+      </div>
     </div>
   );
 };

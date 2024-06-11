@@ -3,6 +3,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { FaSackDollar } from "react-icons/fa6";
 import { MdOutlinePendingActions } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const SellerHome = () => {
     const axiosSecure = useAxiosSecure();
@@ -18,6 +19,9 @@ const SellerHome = () => {
     console.log(data)
   return (
     <div className="flex items-center justify-center">
+      <Helmet>
+        <title>PharmaPlaza | Seller Home</title>
+      </Helmet>
       <div className="text-4xl">
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">

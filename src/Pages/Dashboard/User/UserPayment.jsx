@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 const UserPayment = () => {
     const axiosSecure = useAxiosSecure();
@@ -30,6 +31,9 @@ const UserPayment = () => {
     }
     return (
       <div>
+        <Helmet>
+          <title>PharmaPlaza | Payment History</title>
+        </Helmet>
         <div className="mt-8">
           <h2 className="text-3xl font-bold mb-6 text-center underline">
             Payment History
@@ -37,7 +41,9 @@ const UserPayment = () => {
         </div>
         {data.length === 0 ? (
           <div className="h-screen-minus-20px flex items-center justify-center">
-            <h2 className="text-3xl font-bold">You have not purchased anything yet...</h2>
+            <h2 className="text-3xl font-bold">
+              You have not purchased anything yet...
+            </h2>
           </div>
         ) : (
           <div className="overflow-x-auto border rounded mt-16">

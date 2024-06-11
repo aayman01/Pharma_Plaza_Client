@@ -40,6 +40,7 @@ const Category = () => {
   }
   return (
     <div>
+      
       <SectionTitle
         heading="Our Popular Categories"
         subHeading="Find the best quality products here"

@@ -6,6 +6,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas-pro";
 import { jsPDF } from "jspdf";
+import { Helmet } from "react-helmet-async";
 
 
 const Invoice = () => {
@@ -69,6 +70,9 @@ const Invoice = () => {
 
   return (
     <>
+      <Helmet>
+        <title>PharmaPlaza | Invoice</title>
+      </Helmet>
       <div className="max-w-6xl mx-auto px-4">
         <div ref={pdfRef}>
           <div className="mt-10 mb-8">
@@ -121,7 +125,9 @@ const Invoice = () => {
                     <th className="text-lg text-black text-end">
                       Total Price:
                     </th>
-                    <th className="text-lg text-black ">{totalPrice?.toFixed(2)}$</th>
+                    <th className="text-lg text-black ">
+                      {totalPrice?.toFixed(2)}$
+                    </th>
                   </tr>
                 </tfoot>
               </table>

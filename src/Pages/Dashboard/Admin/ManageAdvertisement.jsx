@@ -1,6 +1,7 @@
 import { ClipLoader } from "react-spinners";
 import useAdvertisement from "../../../Hooks/useAdvertisement";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const ManageAdvertisement = () => {
   const [advertisements, refetch, isLoading] = useAdvertisement();
@@ -27,6 +28,9 @@ const ManageAdvertisement = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>PharmaPlaza | Manage Advertisement</title>
+      </Helmet>
       <div className="mt-8">
         <h2 className="text-3xl font-bold mb-6 text-center underline">
           Manage Advertisements
@@ -60,7 +64,9 @@ const ManageAdvertisement = () => {
                   </div>
                 </td>
                 <td>{item.description}</td>
-                <td className={`inline-flex items-center justify-center font-bold`}>
+                <td
+                  className={`inline-flex items-center justify-center font-bold`}
+                >
                   <p
                     className={`font-medium rounded-lg ${
                       item?.status === "Approved" &&
