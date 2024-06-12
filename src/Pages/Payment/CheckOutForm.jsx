@@ -53,10 +53,10 @@ const CheckOutForm = () => {
     });
 
     if (error) {
-      console.log("payment error", error);
+      // console.log("payment error", error);
       setError(error?.message);
     } else {
-      console.log("payment method", paymentMethod);
+      // console.log("payment method", paymentMethod);
       setError("");
     }
 
@@ -74,7 +74,7 @@ const CheckOutForm = () => {
       }
     );
     if (err) {
-      console.log(err);
+      // console.log(err);
     } else {
       if (paymentIntent.status === "succeeded") {
         setTransactionId(paymentIntent.id);
@@ -103,7 +103,7 @@ const CheckOutForm = () => {
           date: moment().format("MMM Do YYYY"),
         };
         const res = await axiosSecure.post("/payments", payment);
-        console.log("payment saved", res.data);
+        // console.log("payment saved", res.data);
         if (res.data) {
           axiosSecure.post("/invoice", invoiceData).then((result) => {
             if (result.data) {

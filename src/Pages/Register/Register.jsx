@@ -23,7 +23,7 @@ const Register = () => {
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
       headers: { "Content-Type": "multipart/form-data" },
     });
-    console.log(res.data)
+    // console.log(res.data)
     if (res.data.success) {
       createUser(data.email, data.password)
         .then(() => {
@@ -37,7 +37,7 @@ const Register = () => {
               }
               axiosPublic.post('/users',userInfo)
               .then((res)=>{
-                console.log(res.data)
+                // console.log(res.data)
                 if(res.data.insertedId){
                   reset();
                   Swal.fire({
@@ -51,13 +51,9 @@ const Register = () => {
                 }
               })  
             })
-            .catch((err) => {
-              console.log(err);
-            });
+            .catch();
         })
-        .catch((err) => {
-          console.log(err);
-        });
+        .catch();
     }
   };
   return (

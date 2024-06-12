@@ -15,7 +15,7 @@ const Slider = () => {
   const approvedAdvertisements = advertisements.filter(
     (advertisement) => advertisement.status === "Approved"
   );
-  console.log(approvedAdvertisements);
+  // console.log(approvedAdvertisements);
   return (
     <div className="mb-10">
       <Swiper

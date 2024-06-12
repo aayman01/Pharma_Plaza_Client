@@ -26,7 +26,7 @@ const AskForAdvertisement = () => {
     getData();
   }, [axiosSecure,user.email,refetch]);
 
-  console.log(data);
+  // console.log(data);
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">

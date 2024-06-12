@@ -21,7 +21,7 @@ const Login = () => {
   
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     signIn(data.email, data.password)
       .then(() => {
         reset();
@@ -44,9 +44,9 @@ const Login = () => {
           name: result.user?.displayName,
           role: "User",
         };
-        console.log(userInfo)
+        // console.log(userInfo)
         await axiosPublic.post("/users", userInfo).then((res) => {
-          console.log(res.data)
+          // console.log(res.data)
           if (res.data) {
             Swal.fire({
               position: "center",

@@ -29,7 +29,7 @@ const AddProductModal = () => {
         sellerEmail: user?.email,
         discountPercentage: discount,
       };
-      console.log(data)
+      // console.log(data)
      const res = await axiosSecure.post("/product", data)
       if (res.data.insertedId) {
         refetch();

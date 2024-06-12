@@ -11,7 +11,7 @@ const SellerPaymentHistory = () => {
       queryKey: ["seller-payment"],
       queryFn: async () => {
         const res = await axiosSecure.get(`/seller-payment-history?email=${user?.email}`)
-        console.log(res.data);
+        // console.log(res.data);
         return res.data;
       },
     });
@@ -23,7 +23,7 @@ const SellerPaymentHistory = () => {
       );
     }
 
-    console.log(data)
+    // console.log(data)
     return (
       <div>
         <Helmet>

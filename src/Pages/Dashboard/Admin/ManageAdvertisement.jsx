@@ -8,7 +8,7 @@ const ManageAdvertisement = () => {
     const axiosSecure = useAxiosSecure();
 
   const handleToggle = async (status, id) => {
-    console.log(status, id)
+    // console.log(status, id)
      let newStatus;
      if (status === "approved") {
        newStatus = "hidden";

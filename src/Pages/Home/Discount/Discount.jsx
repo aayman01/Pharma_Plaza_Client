@@ -15,7 +15,7 @@ const Discount = () => {
   const {products} = useAllProducts();
   
   const discountProduct = products.filter((product) => product.discountPercentage > 0);
-  console.log(discountProduct);
+  // console.log(discountProduct);
   return (
     <div>
       <SectionTitle heading="Discount Products"></SectionTitle>

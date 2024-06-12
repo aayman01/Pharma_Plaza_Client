@@ -37,7 +37,7 @@ const UpdateProfile = () => {
             };
             axiosPublic.put(`/users/${user.email}`,updateData)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.modifiedCount > 0) {
                   setLoading(false)
                   Swal.fire({
@@ -50,9 +50,7 @@ const UpdateProfile = () => {
                 }
             })
         })
-        .catch(err => {
-            console.log(err)
-        })
+        .catch()
     }
       
     };

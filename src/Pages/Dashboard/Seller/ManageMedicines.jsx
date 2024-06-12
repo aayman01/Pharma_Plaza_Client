@@ -7,7 +7,7 @@ const ManageMedicines = () => {
     const { products } = useAllProducts();
     const {user} = useAuth();
     const seller = products.filter(product => product.sellerEmail === `${user.email}`);
-    console.log(seller)
+    // console.log(seller)
     return (
       <div>
         <Helmet>

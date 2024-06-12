@@ -21,7 +21,7 @@ const AddAdvertisementModal = () => {
         };
         axiosSecure.post('/advertisement',data)
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             if(res.data.insertedId){
                 e.target.reset();
                 toast.success("Successfully Added!");

@@ -46,7 +46,7 @@ const Cart = () => {
   };
 
   const handleSingleDelete = (id) => {
-    console.log(id)
+    // console.log(id)
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -111,9 +111,7 @@ const Cart = () => {
           toast.success("Successfully Updated!");
         }
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch();
   }
 
   if (isLoading) {

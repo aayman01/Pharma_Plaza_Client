@@ -41,7 +41,7 @@ const Shop = () => {
   ];
 
   const handlePaginationButton = (value) =>{
-    console.log(value);
+    // console.log(value);
     setCurrentPage(value);
     refetch();
   }

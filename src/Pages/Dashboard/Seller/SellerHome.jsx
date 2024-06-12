@@ -12,11 +12,11 @@ const SellerHome = () => {
       queryKey: ["query-stats"],
       queryFn: async () => {
         const res = await axiosSecure.get(`/seller-stats?email=${user?.email}`);
-        console.log(res.data);
+        // console.log(res.data);
         return res.data;
       },
     });
-    console.log(data)
+    // console.log(data)
   return (
     <div className="flex items-center justify-center">
       <Helmet>

@@ -16,7 +16,7 @@ const useProduct = (searchText, currentPage, itemsPerPage,sort) => {
       const res = await axiosPublic.get(
         `/products?search=${searchText}&page=${currentPage}&size=${itemsPerPage}&sort=${sort}`
       );
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     },
   });
