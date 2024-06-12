@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
         path: "/category/:name",
         element: <SpecificCategoryList></SpecificCategoryList>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.name}`),
+          fetch(`https://pharma-plaza-server.vercel.app/category/${params.name}`),
       },
       {
         path: "cart",

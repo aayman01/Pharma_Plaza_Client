@@ -137,7 +137,7 @@ const SellReportPage = () => {
                   <td>{item.productDetails?.sellerEmail}</td>
                   <td>{item.transactionId}</td>
                   <td>{formatDate(item?.date, "MMM,dd,yyyy")}</td>
-                  <td>{item.price.toFixed(2)}$</td>
+                  <td className="font-bold">{item.price.toFixed(2)}$</td>
                 </tr>
               </tbody>
             ))}

@@ -9,7 +9,7 @@ import './testimonial.css'
 const Testimonial = () => {
     const [reviews, setReview] = useState([]);
     useEffect(()=>{
-        axios.get("http://localhost:5000/reviews")
+        axios.get("https://pharma-plaza-server.vercel.app/reviews")
         .then((res) => {
           setReview(res.data);
         });
