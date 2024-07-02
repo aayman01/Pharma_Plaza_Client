@@ -7,6 +7,10 @@
 - **username:**- admin@gmail.com
 - **pass:**- 123456
 
+##Clone my project
+- download on your computer first
+- Install Dependencies: npm i
+- Deploy it on the local server: npm run dev
 
 ## Features
 - **Comprehensive Marketplace**: Our platform offers a wide range of prescription medications, over-the-counter drugs, vitamins, supplements, personal care products, and medical devices.
