@@ -13,7 +13,7 @@
 - Deploy it on the local server: npm run dev
 
 ## Features
-- **Comprehensive Marketplace**: Our platform offers a wide range of prescription medications, over-the-counter drugs, vitamins, supplements, personal care products, and medical devices.
+- **Comprehensive Marketplace**: This platform offers a wide range of prescription medications, over-the-counter drugs, vitamins, supplements, personal care products, and medical devices.
 
 - **Multi-Vendor Support**: Vendors can easily list their healthcare products, manage inventory, and process orders through a user-friendly interface.
 
